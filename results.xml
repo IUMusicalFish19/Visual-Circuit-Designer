@@ -1,6 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1749293126" />
-    <testcase name="full_circuit_test" classname="test" file="/Users/doshq/Visual-Circuit-Designer/test.py" lineno="5" time="0.0007688999176025391" sim_time_ns="8.001" ratio_time="10405.775598139535" />
+    <property name="random_seed" value="1749328546" />
+    <testcase name="full_circuit_test" classname="test" file="/Users/doshq/Visual-Circuit-Designer/test.py" lineno="5" time="0.0019271373748779297" sim_time_ns="8.001" ratio_time="4151.753841890387" />
   </testsuite>
 </testsuites>
