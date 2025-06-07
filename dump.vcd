@@ -1,0 +1,53 @@
+$date
+	Sat Jun  7 13:45:26 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module user_circuit $end
+$var wire 1 ! A $end
+$var wire 1 " B $end
+$var wire 1 # C $end
+$var wire 1 $ OUT1 $end
+$var wire 1 % OUT2 $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#1000
+1%
+1#
+#2000
+0%
+0#
+1"
+#3000
+1%
+1#
+#4000
+0%
+0#
+0"
+1!
+#5000
+1%
+1#
+#6000
+0#
+1"
+#7000
+1$
+1#
+#8001
