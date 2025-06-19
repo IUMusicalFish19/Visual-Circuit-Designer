@@ -2,11 +2,17 @@ body {
   font-family: Montserrat, serif;
   font-size: 13px;
   font-weight: 600;
+  background-color: var(--canvas-bg-color);
 }
 
 #app {
-  width: 98vw;
-  height: 97vh;
+  width: 100vw;
+  height: 99.5vh;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
+
+
 
 

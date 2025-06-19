@@ -1,0 +1,208 @@
+:root {
+    --canvas-bg-color: #ffffff;
+    --canvas-color: #efefef;
+    --menu-bg-color: #ffffff;
+    --switch-bg-color: #818181;
+
+    --external-border-color: #cacaca;
+    --internal-border-color: #dadada;
+
+    --text-color: #000000;
+    --svg-color: #000000;
+
+    --button-color: #ffffff;
+    --button-hover-color: #ffffff;
+    --button-active-color: #ffffff;
+
+    --select-color: #dbedff;
+
+    --simulate-start-button-bg-color: #d6f1df; /* либо #C4E8D1 */
+    --simulate-start-button-text-color: #218358;
+
+    --simulate-stop-button-bg-color: #ffdbdc;
+    --simulate-stop-button-text-color: #ce2c31;
+
+
+    --minimap-mask-color: rgba(240, 240, 240, 0.6);
+    --minimap-node-color: #e2e2e2;
+
+    transition: all 0s;
+}
+
+[data-theme='dark'] {
+    --canvas-bg-color: #151515;
+    --canvas-color: #232323;
+    --menu-bg-color: #1e1e1e;
+    --switch-bg-color: #555555;
+
+    --external-border-color: #2f2f2f;
+    --internal-border-color: #3a3a3a;
+
+    --text-color: #e0e0e0;
+    --svg-color: #ffffff;
+
+    --button-color: #1e1e1e;
+    --button-hover-color: #2a2a2a;
+    --button-active-color: #333333;
+
+    --select-color: #2a3b55;
+
+    --simulate-start-button-bg-color: #325e45; /* тёмно-зелёный, не слишком яркий */
+    --simulate-start-button-text-color: #b4eac8; /* мятно-светлый, читабельный */
+
+    --simulate-stop-button-bg-color: #5a2c2d; /* глухой красный */
+    --simulate-stop-button-text-color: #ffb4b6; /* бледно-красный для текста */
+
+
+    --minimap-mask-color: rgba(240, 240, 240, 0.1);
+    --minimap-node-color: #323232;
+}
+
+[data-theme='pick-me'] {
+    --canvas-bg-color: #fff4f7;
+    --canvas-color: #ffe6ec;
+    --menu-bg-color: #fff0f5;
+    --switch-bg-color: #c6a5af;
+
+    --external-border-color: #f3c6d4;
+    --internal-border-color: #f7d5e2;
+
+    --text-color: #4a2b31; /* тёмный розовато-коричневый для контраста */
+    --svg-color: #681824;
+
+    --button-color: #ffe4ed;
+    --button-hover-color: #ffd6e4;
+    --button-active-color: #ffc8db;
+
+    --select-color: #fbd1df;
+
+    --simulate-start-button-bg-color: #f1dce4; /* слегка розовый с зелёным подтоном */
+    --simulate-start-button-text-color: #7c3d51; /* глубокий тёмно-розовый/сливовый */
+
+    --simulate-stop-button-bg-color: #ffc8d0; /* чуть ярче, но сочетается */
+    --simulate-stop-button-text-color: #a1222d; /* ближе к цвету иконок */
+
+
+
+    --minimap-mask-color: rgba(255, 240, 245, 0.6);
+    --minimap-node-color: #fbdde6;
+
+    transition: all 0s;
+}
+
+[data-theme='tokyo-night'] {
+    --canvas-bg-color: #1a1b26; /* основа */
+    --canvas-color: #24283b;   /* внутренний фон */
+    --menu-bg-color: #1f2335;
+    --switch-bg-color: #7aa2f7;
+
+    --external-border-color: #414868;
+    --internal-border-color: #3b4261;
+
+    --text-color: #c0caf5;
+    --svg-color: #c0caf5;
+
+    --button-color: #1f2335;
+    --button-hover-color: #2a2f4a;
+    --button-active-color: #3b4261;
+
+    --select-color: #33467c;
+
+    --simulate-start-button-bg-color: #2d4f46; /* зелёный с холодным подтоном */
+    --simulate-start-button-text-color: #9ece6a; /* основной зелёный Tokyo Night */
+
+    --simulate-stop-button-bg-color: #553648; /* тёмно-красновато-сливовый */
+    --simulate-stop-button-text-color: #f7768e; /* акцентный розовый TN */
+
+
+    --minimap-mask-color: rgba(30, 32, 48, 0.6);
+    --minimap-node-color: #3b4261;
+
+    transition: all 0s;
+}
+
+[data-theme='green-nature'] {
+    --canvas-bg-color: #f4fdf7;
+    --canvas-color: #e6f5ea;
+    --menu-bg-color: #eafaf1;
+    --switch-bg-color: #6bbf59;
+
+    --external-border-color: #c2e3c6;
+    --internal-border-color: #d5f0db;
+
+    --text-color: #2f4d38;
+    --svg-color: #3d6147;
+
+    --button-color: #dff5e5;
+    --button-hover-color: #d0ecd9;
+    --button-active-color: #bee0c9;
+
+    --select-color: #b6e9c5;
+
+    --simulate-start-button-bg-color: #c4e8d1; /* слегка ярче, чем фон */
+    --simulate-start-button-text-color: #2f6d4a; /* гармонирует с остальными зелёными */
+
+    --simulate-stop-button-bg-color: #f8cccc; /* менее кислотный */
+    --simulate-stop-button-text-color: #ba3a3a; /* органично смотрится в природе */
+
+
+    --minimap-mask-color: rgba(200, 255, 225, 0.5);
+    --minimap-node-color: #c9e7d6;
+}
+
+[data-theme='solar-red'] {
+    --canvas-bg-color: #1c1c1c;
+    --canvas-color: #2a2a2a;
+    --menu-bg-color: #232323;
+    --switch-bg-color: #2e2525;
+
+    --external-border-color: #3a3a3a;
+    --internal-border-color: #4b4b4b;
+
+    --text-color: #f0f0f0;
+    --svg-color: #f95959;
+
+    --button-color: #2a2a2a;
+    --button-hover-color: #393939;
+    --button-active-color: #4a4a4a;
+
+    --select-color: rgba(249, 89, 89, 0.25);
+
+    --simulate-start-button-bg-color: #395039; /* землисто-коричневый с зелёным намёком */
+    --simulate-start-button-text-color: #76a182; /* мягкий зелёный, хороший контраст */
+
+    --simulate-stop-button-bg-color: #5c2d2d; /* глубокий красный/коричневый */
+    --simulate-stop-button-text-color: #f95959; /* главный акцент темы */
+
+
+    --minimap-mask-color: rgba(255, 80, 80, 0.2);
+    --minimap-node-color: #3a3a3a;
+}
+
+
+
+
+
+
+/*Theme template*/
+
+/*[data-theme='theme-name'] {*/
+/*    --canvas-color: #;                  !* Фон канваса *!*/
+/*    --menu-bg-color: #;                 !* Фон меню *!*/
+
+/*    --external-border-color: #;         !* Внешняя граница *!*/
+/*    --internal-border-color: #;         !* Внутренняя граница *!*/
+
+/*    --text-color: #;                    !* Основной текст *!*/
+/*    --svg-color: #;                     !* Цвет SVG *!*/
+
+/*    --button-color: #;                  !* Фон обычной кнопки *!*/
+/*    --button-hover-color: #;            !* Фон при наведении *!*/
+/*    --button-active-color: #;           !* Фон при нажатии *!*/
+
+/*    --select-color: #;                  !* Цвет выделения *!*/
+
+/*    --simulate-button-bg-color: #;      !* Фон кнопки симуляции *!*/
+/*    --simulate-button-text-color: #;    !* Текст на кнопке симуляции *!*/
+/*}*/
+

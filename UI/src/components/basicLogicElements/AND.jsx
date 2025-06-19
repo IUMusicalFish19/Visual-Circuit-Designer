@@ -1,25 +1,12 @@
 import {Handle, Position} from '@xyflow/react';
-import AndGate from '../../../assets/circuitsMenu/AND.svg';
 
 import CustomHandle from '../codeComponents/CustomHandle.jsx';
+import {IconAND} from "../../../assets/circuits-icons.jsx";
 
 function AndNode({ isConnectable }) {
   return (
-    <div
-      style={{
-        width: 80,
-        height: 70,
-        position: 'relative',
-        border: '1px solid #555',
-        borderRadius: '4px',
-        background: '#fff',
-        display: 'flex',
-        boxSizing: 'border-box',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <img src={AndGate} alt="AND Gate" style={{ objectFit: 'cover', maxWidth: '100%', height: '110%' }}/>
+    <div className='circuit-button'>
+      <IconAND SVGClassName={'circuit-button-icon'}/>
 
       {/* Handles */}
       <CustomHandle

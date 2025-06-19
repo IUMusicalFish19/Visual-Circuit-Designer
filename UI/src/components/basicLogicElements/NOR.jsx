@@ -1,25 +1,12 @@
 import {Handle, Position} from '@xyflow/react';
-import NorGate from '../../../assets/circuitsMenu/NOR.svg';
 
 import CustomHandle from '../codeComponents/CustomHandle.jsx';
+import {IconNOR} from "../../../assets/circuits-icons.jsx";
 
 function NorNode({ isConnectable }) {
   return (
-    <div
-      style={{
-        width: 80,
-        height: 70,
-        position: 'relative',
-        border: '1px solid #555',
-        borderRadius: '4px',
-        background: '#fff',
-        display: 'flex',
-        boxSizing: 'border-box',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <img src={NorGate} alt="NOR Gate" style={{ objectFit: 'cover', maxWidth: '100%', height: '110%' }}/>
+    <div className='circuit-button'>
+      <IconNOR SVGClassName={'circuit-button-icon'}/>
 
       {/* Handles */}
       <CustomHandle

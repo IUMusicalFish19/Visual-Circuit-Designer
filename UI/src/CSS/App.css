@@ -1,7 +1,28 @@
+.controls {
+  border: var(--external-border-color) solid 0.07rem;
+  background-color: var(--menu-bg-color);
+  border-radius: 0.2rem;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.controls button {
+  background-color: var(--button-color);
+  border-bottom: var(--internal-border-color) solid 0.07rem;
+}
+
+.controls button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.controls button svg {
+  color: var(--svg-color);
+}
+
 /*_______Canvas_______*/
 .canvasContainer {
-  height: 97vh;
-  width: 98vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 .react-flow__attribution {
@@ -18,8 +39,3 @@
     transform: translateY(0);
   }
 }
-
-
-
-
-

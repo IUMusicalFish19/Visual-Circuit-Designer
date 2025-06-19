@@ -1,10 +1,8 @@
 /*______DragAndDrop______*/
 .dndnode {
     padding: 8px;
-
-    border: #c6c6c6 1px solid;
+    border: var(--internal-border-color) 0.05rem solid;
     border-radius: 0.5rem;
-
     cursor: move;
     display: flex;
     flex-direction: column;
@@ -13,7 +11,7 @@
     user-select: none;
 }
 
-.dndnode img {
+.dndnode svg {
     width: 50px;
     height: auto;
     user-select: none;
@@ -34,4 +32,23 @@
     0% {
         stroke-dashoffset: 10;
     }
+}
+
+.circuit-button{
+    width: 80px;
+    height: 70px;
+    position: relative;
+    border: 0.05rem solid var(--external-border-color);
+    border-radius: 4px;
+    background: var(--canvas-color);
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+
+.circuit-button-icon {
+    color: var(--svg-color);
+    object-fit: cover;
+    transform: scale(1.23);
 }

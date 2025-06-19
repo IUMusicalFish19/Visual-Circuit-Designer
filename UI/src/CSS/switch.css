@@ -9,16 +9,13 @@ button {
     font-size: 3rem;
     width: 42px;
     height: 25px;
-    background-color: #818181;
+    background-color: var(--switch-bg-color);
     border-radius: 9999px;
     position: relative;
     transition: background-color 0.1s;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    &:focus {
-        box-shadow: 0 0 0 2px #dbedff;
-    }
     &[data-state="checked"] {
-        background-color: #5dcd67;
+        background-color: var(--select-color);
     }
 }
 

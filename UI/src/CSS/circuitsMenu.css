@@ -6,23 +6,24 @@
     z-index: 200;
     position: fixed;
     top: 2.5rem;
-    left: -17.33rem;
+    left: -15.5rem;
     margin: 0.5rem 0 0 0.5rem;
     border-radius: 0.5rem;
-    background-color: #ffffff;
-    transition: 0.3s ease-in-out;
+    background-color: var(--menu-bg-color);
+    color: var(--text-color);
+    transition: left 0.2s ease, color 0s, background-color 0s;
     user-select: none;
-    border: 0.05rem solid #cacaca;
+    border: 0.05rem solid var(--external-border-color);
 }
 
 .circuitsMenu.open {
-    transition: 0.3s ease-out;
+    transition: 0.2s ease;
     position: fixed;
     left: 0;
 }
 
 .circuitsMenuInnerButton {
-    background-color: #ffffff;
+    background-color: var(--button-color);
     border: none;
     transition: 0.15s ease-out;
     border-radius: 0.5rem;
@@ -33,12 +34,12 @@
 
 .circuitsMenuInnerButton:hover {
     transition: 0.15s ease-out;
-    background-color: #dadada;
+    background-color: var(--external-border-color);
 }
 
 .circuitsMenuInnerButton:active {
     transition: 0.05s ease-out;
-    background-color: #dbedff;
+    background-color: var(--select-color);
     box-shadow: none;
 }
 
@@ -92,7 +93,7 @@
 
 .arrow {
     height: 0.75rem;
-    color: black;
+    color: var(--svg-color);
     transition: transform 0.15s;
     cursor: pointer;
     user-select: none;
@@ -113,14 +114,15 @@
     width: 2rem;
     height: 2rem;
     z-index: 500;
-    background-color: #ffffff;
-    border: #cacaca solid 0.07rem;
+    background-color: var(--button-color);
+    border: var(--external-border-color) solid 0.07rem;
     transition: 0.15s ease-out;
     border-radius: 0.33rem;
     user-select: none;
 }
 
 .openCircuitsMenuButtonIcon {
+    color: var(--svg-color);
     width: 1.4rem;
     height: 1.4rem;
     user-select: none;
@@ -132,11 +134,34 @@
 
 .openCircuitsMenuButton:hover {
     transition: 0.15s ease-out;
-    background-color: #dadada;
+    background-color: var(--button-hover-color);
 }
 
 .openCircuitsMenuButton:active {
     transition: 0.05s ease-out;
-    background-color: #e3e3e3;
+    background-color: var(--button-hover-color);
     box-shadow: none;
+}
+
+
+.gates-grid-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
+}
+
+.gates-grid-wrapper.open {
+    max-height: 200px;
+}
+
+.gates-grid {
+    padding-top: 4px;
+    opacity: 0;
+    transform: translateY(-160px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.gates-grid-wrapper.open .gates-grid {
+    opacity: 1;
+    transform: translateY(0);
 }

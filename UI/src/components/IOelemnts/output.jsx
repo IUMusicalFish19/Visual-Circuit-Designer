@@ -1,25 +1,12 @@
 import { Position } from '@xyflow/react';
-import OutputGate from '../../../assets/circuitsMenu/output.svg';
 
 import CustomHandle from '../codeComponents/CustomHandle.jsx';
+import {IconOutput} from "../../../assets/circuits-icons.jsx";
 
 function outputNode({ isConnectable }) {
   return (
-    <div
-      style={{
-        width: 80,
-        height: 70,
-        position: 'relative',
-        border: '1px solid #555',
-        borderRadius: '4px',
-        background: '#fff',
-        display: 'flex',
-        boxSizing: 'border-box',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <img src={OutputGate} alt="Output Gate" style={{ objectFit: 'cover', maxWidth: '100%', height: '110%' }}/>
+    <div className='circuit-button'>
+      <IconOutput SVGClassName={'circuit-button-icon'}/>
 
       {/* Handles */}
       <CustomHandle

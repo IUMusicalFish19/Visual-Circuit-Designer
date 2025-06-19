@@ -14,8 +14,8 @@ export default function ContextMenu({
   const duplicateNode = useCallback(() => {
     const node = getNode(id);
     const position = {
-      x: node.position.x + 50,
-      y: node.position.y + 50,
+      x: node.position.x + 25,
+      y: node.position.y + 25,
     };
 
     addNodes({

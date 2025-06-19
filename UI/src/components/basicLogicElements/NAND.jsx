@@ -1,25 +1,12 @@
 import {Handle, Position} from '@xyflow/react';
-import NandGate from '../../../assets/circuitsMenu/NAND.svg';
 
 import CustomHandle from '../codeComponents/CustomHandle.jsx';
+import {IconNAND} from "../../../assets/circuits-icons.jsx";
 
 function NandNode({ isConnectable }) {
   return (
-    <div
-      style={{
-        width: 80,
-        height: 70,
-        position: 'relative',
-        border: '1px solid #555',
-        borderRadius: '4px',
-        background: '#fff',
-        display: 'flex',
-        boxSizing: 'border-box',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <img src={NandGate} alt="NAND Gate" style={{ objectFit: 'cover', maxWidth: '100%', height: '110%' }}/>
+    <div className='circuit-button'>
+      <IconNAND SVGClassName={'circuit-button-icon'}/>
 
       {/* Handles */}
       <CustomHandle

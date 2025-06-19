@@ -12,34 +12,32 @@ button {
     line-height: 1;
     height: 35px;
     gap: 5px;
-    background-color: white;
-    color: #1b1b1b;
-    border: 1px solid #1b1b1b;
+    background-color: var(--menu-bg-color);
+    color: var(--text-color);
+    border: 0.05rem solid var(--internal-border-color);
     z-index: 10000;
-    /*border: 10px solid;*/
-
-
 }
 
 .SelectTrigger:hover {
-    background-color: #efefef;
+    background-color: var(--button-hover-color);
 }
+
 .SelectTrigger[data-placeholder] {
     color: #000000;
 }
 
 .SelectIcon {
-    color: #000000;
+    color: var(--svg-color);
 }
 
 .SelectContent {
     overflow: hidden;
-    background-color: white;
+    background-color: var(--menu-bg-color);
+    border: 0.05rem solid var(--internal-border-color);
+    color: var(--text-color);
+
     border-radius: 6px;
     z-index: 10000;
-    box-shadow:
-            0 10px 38px -10px rgba(22, 23, 24, 0.35),
-            0 10px 20px -15px rgba(22, 23, 24, 0.2);
 }
 
 .SelectViewport {
@@ -47,9 +45,9 @@ button {
 }
 
 .SelectItem {
+    color: var(--text-color);
     font-size: 13px;
     line-height: 1;
-    color: #000000;
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -58,14 +56,9 @@ button {
     position: relative;
     user-select: none;
 }
-.SelectItem[data-disabled] {
-    color: #9f7f7f;
-    pointer-events: none;
-}
 .SelectItem[data-highlighted] {
     outline: none;
-    background-color: #e6e6e6;
-    color: #000000;
+    background-color: var(--button-hover-color);
 }
 
 .SelectLabel {
