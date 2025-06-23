@@ -40,15 +40,11 @@
   }
 }
 
-
-
-.circuit-button.input{
+.circuit-button.input {
   position: relative;
   width: 100px;
   height: 50px;
 }
-
-
 
 /* SVG‑иконка занимает весь контейнер */
 .input-icon-wrapper {
@@ -71,4 +67,3 @@
 .switch-wrapper.hide {
   visibility: hidden;
 }
-

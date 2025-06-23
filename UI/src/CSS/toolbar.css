@@ -45,7 +45,6 @@
   display: block;
   justify-content: center;
   align-items: center;
-
 }
 
 .toolbarButton.active {
@@ -54,7 +53,6 @@
   box-shadow: none;
   border: var(--select-color) solid 0.05rem;
 }
-
 
 .toolbar-separator {
   width: 0.1rem;
@@ -81,7 +79,7 @@
 }
 
 .simulate-button.awaiting {
-    background-color: var(--simulate-loading-button-bg-color);
+  background-color: var(--simulate-loading-button-bg-color);
 }
 
 .simulate-button.running {
@@ -89,29 +87,28 @@
 }
 
 .simulate-button.error {
-    background-color: var(--simulate-error-button-bg-color);
+  background-color: var(--simulate-error-button-bg-color);
 }
-
 
 .simulate-button-svg.idle {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: auto;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    color: var(--simulate-start-button-text-color);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: auto;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  color: var(--simulate-start-button-text-color);
 }
 
-.simulate-button-svg.awaiting{
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: auto;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    color: var(--simulate-loading-button-text-color);
-    transform: scale(1.1);
+.simulate-button-svg.awaiting {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: auto;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  color: var(--simulate-loading-button-text-color);
+  transform: scale(1.1);
 }
 
 .simulate-button-svg.running {
@@ -126,12 +123,12 @@
 }
 
 .simulate-button-svg.error {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: auto;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    color: var(--simulate-error-button-text-color);
-    transform: scale(1.1);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: auto;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  color: var(--simulate-error-button-text-color);
+  transform: scale(1.1);
 }

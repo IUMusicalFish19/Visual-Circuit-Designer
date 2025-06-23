@@ -8,7 +8,7 @@ import {
 } from "@radix-ui/react-icons";
 import "../../CSS/select.css";
 
-export const SelectCanvasBG = ({currentBG, setCurrentBG}) => (
+export const SelectCanvasBG = ({ currentBG, setCurrentBG }) => (
   <Select.Root value={currentBG} onValueChange={setCurrentBG}>
     <Select.Trigger className="SelectTrigger" aria-label="canvas-bg">
       <Select.Value placeholder="Select background" />
@@ -33,7 +33,7 @@ export const SelectCanvasBG = ({currentBG, setCurrentBG}) => (
   </Select.Root>
 );
 
-export const SelectTheme = ({theme, setTheme}) => (
+export const SelectTheme = ({ theme, setTheme }) => (
   <Select.Root value={theme} onValueChange={setTheme}>
     <Select.Trigger className="SelectTrigger" aria-label="Food">
       <Select.Value placeholder="Select theme" />
@@ -54,10 +54,6 @@ export const SelectTheme = ({theme, setTheme}) => (
             <SelectItem value="tokyo-night">Tokyo Night🌃</SelectItem>
             <SelectItem value="green-nature">Green Nature🍃</SelectItem>
             <SelectItem value="solar-red">Solar Red🔥</SelectItem>
-
-
-
-
           </Select.Group>
         </Select.Viewport>
       </Select.Content>
@@ -81,4 +77,3 @@ const SelectItem = React.forwardRef(
     );
   },
 );
-

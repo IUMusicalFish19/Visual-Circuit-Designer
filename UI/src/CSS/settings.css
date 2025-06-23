@@ -12,7 +12,12 @@
   color: var(--text-color);
   border-radius: 0.5rem;
   border: var(--external-border-color) solid 0.05rem;
-  transition: width 1s 0.15s, height 1s 0.15s, background-color 0.15s ease-in-out, backdrop-filter 0.15s ease-in-out, opacity 0.15s ease-in-out;
+  transition:
+    width 1s 0.15s,
+    height 1s 0.15s,
+    background-color 0.15s ease-in-out,
+    backdrop-filter 0.15s ease-in-out,
+    opacity 0.15s ease-in-out;
 }
 
 .settingsMenu.showed {
@@ -22,7 +27,12 @@
   height: 80%;
   top: 10%;
   left: 15%;
-  transition: width 0s, height 0s, background-color 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  transition:
+    width 0s,
+    height 0s,
+    background-color 0.2s ease-in-out,
+    backdrop-filter 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
 }
 
 .settingsMenuTitle {
@@ -134,13 +144,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
-
 
 .minimapSwitchLabel {
   font-size: 1rem;
   justify-content: flex-start;
 }
-
-

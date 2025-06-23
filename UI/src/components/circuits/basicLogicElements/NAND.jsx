@@ -1,12 +1,12 @@
-import { Position } from '@xyflow/react';
+import { Position } from "@xyflow/react";
 
-import CustomHandle from '../../codeComponents/CustomHandle.jsx';
-import { IconNAND } from '../../../../assets/circuits-icons.jsx';
+import CustomHandle from "../../codeComponents/CustomHandle.jsx";
+import { IconNAND } from "../../../../assets/circuits-icons.jsx";
 
 function NandNode({ isConnectable }) {
   return (
-    <div className='circuit-button'>
-      <IconNAND SVGClassName={'circuit-button-icon'}/>
+    <div className="circuit-button">
+      <IconNAND SVGClassName={"circuit-button-icon"} />
 
       {/* Handles */}
       <CustomHandle

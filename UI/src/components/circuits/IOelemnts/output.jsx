@@ -1,12 +1,12 @@
-import { Position } from '@xyflow/react';
+import { Position } from "@xyflow/react";
 
-import CustomHandle from '../../codeComponents/CustomHandle.jsx';
-import {IconOutput} from '../../../../assets/circuits-icons.jsx';
+import CustomHandle from "../../codeComponents/CustomHandle.jsx";
+import { IconOutput } from "../../../../assets/circuits-icons.jsx";
 
 function outputNode({ isConnectable }) {
   return (
-    <div className='circuit-button'>
-      <IconOutput SVGClassName={'circuit-button-icon'}/>
+    <div className="circuit-button">
+      <IconOutput SVGClassName={"circuit-button-icon"} />
 
       {/* Handles */}
       <CustomHandle
