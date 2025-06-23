@@ -1,6 +1,8 @@
 name: Push workflow
 on:
-  push
+  push:
+    paths:
+      - 'UI/**'
 permissions:
   contents: read
 jobs:
