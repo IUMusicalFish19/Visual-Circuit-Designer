@@ -1,12 +1,12 @@
-import { io } from "socket.io-client"
+import { io } from "socket.io-client";
 
 export const handleSimulateClick = ({
-                                      simulateState,
-                                      setSimulateState,
-                                      socketRef,
-                                      nodes,
-                                      edges,
-                                    }) => {
+  simulateState,
+  setSimulateState,
+  socketRef,
+  nodes,
+  edges,
+}) => {
   if (simulateState === "awaiting") {
     console.log("🟡 User canceled connect waiting");
 
@@ -90,11 +90,7 @@ export const handleSimulateClick = ({
     };
 
     console.log(JSON.stringify(flowData, null, 2));
-    socketRef.current.emit(
-      "run_simulation",
-      flowData
-    );
-
+    socketRef.current.emit("run_simulation", flowData);
 
     // НЕ переключай simulateState вручную — сервер сам вызовет setSimulateState("running")
   }

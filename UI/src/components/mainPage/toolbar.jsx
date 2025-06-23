@@ -1,5 +1,10 @@
 import React from "react";
-import {IconStop, IconLoading, IconStart, IconError} from "../../../assets/ui-icons.jsx";
+import {
+  IconStop,
+  IconLoading,
+  IconStart,
+  IconError,
+} from "../../../assets/ui-icons.jsx";
 
 import {
   IconToolbarCursor,
@@ -7,28 +12,50 @@ import {
   IconToolbarHand,
   IconToolbarSquareWire,
   IconToolbarDiagWire,
-  IconToolbarText
+  IconToolbarText,
 } from "../../../assets/toolbar-icons.jsx";
 
-export default function Toolbar({ simulateState, activeAction, setActiveAction, activeWire, setActiveWire, activeButton, setActiveButton, setPanOnDrag, setWireType, onSimulateClick}) {
+export default function Toolbar({
+  simulateState,
+  activeAction,
+  setActiveAction,
+  activeWire,
+  setActiveWire,
+  activeButton,
+  setActiveButton,
+  setPanOnDrag,
+  setWireType,
+  onSimulateClick,
+}) {
   return (
     <div className="toolbar">
       <button
         className={`simulate-button ${simulateState}`}
         onClick={onSimulateClick}
-
       >
         {simulateState === "idle" && (
-          <IconStart SVGClassName="simulate-button-svg idle" draggable="false" />
+          <IconStart
+            SVGClassName="simulate-button-svg idle"
+            draggable="false"
+          />
         )}
         {simulateState === "awaiting" && (
-          <IconLoading SVGClassName="simulate-button-svg awaiting" draggable="false" />
+          <IconLoading
+            SVGClassName="simulate-button-svg awaiting"
+            draggable="false"
+          />
         )}
         {simulateState === "running" && (
-          <IconStop SVGClassName="simulate-button-svg running" draggable="false" />
+          <IconStop
+            SVGClassName="simulate-button-svg running"
+            draggable="false"
+          />
         )}
         {simulateState === "error" && (
-          <IconError SVGClassName="simulate-button-svg error" draggable="false" />
+          <IconError
+            SVGClassName="simulate-button-svg error"
+            draggable="false"
+          />
         )}
       </button>
 
@@ -59,11 +86,14 @@ export default function Toolbar({ simulateState, activeAction, setActiveAction, 
       <button
         className={`toolbarButton ${activeWire === "stepWire" ? "active" : ""}`}
         onClick={() => {
-          setActiveWire("stepWire")
+          setActiveWire("stepWire");
           setWireType("step");
         }}
       >
-        <IconToolbarSquareWire SVGClassName="toolbarButtonIcon" draggable="false" />
+        <IconToolbarSquareWire
+          SVGClassName="toolbarButtonIcon"
+          draggable="false"
+        />
       </button>
 
       <button
@@ -73,7 +103,10 @@ export default function Toolbar({ simulateState, activeAction, setActiveAction, 
           setWireType("straight");
         }}
       >
-        <IconToolbarDiagWire SVGClassName="toolbarButtonIcon" draggable="false" />
+        <IconToolbarDiagWire
+          SVGClassName="toolbarButtonIcon"
+          draggable="false"
+        />
       </button>
 
       <div className="toolbar-separator"></div>

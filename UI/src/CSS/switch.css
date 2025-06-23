@@ -1,42 +1,40 @@
-
-
 /* reset */
 button {
-    all: unset;
+  all: unset;
 }
 
 .SwitchRoot {
-    font-size: 3rem;
-    width: 42px;
-    height: 25px;
-    background-color: var(--switch-bg-color);
-    border-radius: 9999px;
-    position: relative;
-    transition: background-color 0.1s;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    &[data-state="checked"] {
-        background-color: var(--select-color);
-    }
+  font-size: 3rem;
+  width: 42px;
+  height: 25px;
+  background-color: var(--switch-bg-color);
+  border-radius: 9999px;
+  position: relative;
+  transition: background-color 0.1s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  &[data-state="checked"] {
+    background-color: var(--select-color);
+  }
 }
 
 .SwitchThumb {
-    display: block;
-    width: 21px;
-    height: 21px;
-    background-color: white;
-    border-radius: 9999px;
-    transition: transform 100ms;
-    transform: translateX(2px);
-    will-change: transform;
-    &[data-state="checked"] {
-        transform: translateX(19px);
-    }
+  display: block;
+  width: 21px;
+  height: 21px;
+  background-color: white;
+  border-radius: 9999px;
+  transition: transform 100ms;
+  transform: translateX(2px);
+  will-change: transform;
+  &[data-state="checked"] {
+    transform: translateX(19px);
+  }
 }
 
 .Label {
-    color: white;
-    font-size: 3rem;
-    line-height: 1;
-    user-select: none;
-    justify-content: flex-start;
+  color: white;
+  font-size: 3rem;
+  line-height: 1;
+  user-select: none;
+  justify-content: flex-start;
 }

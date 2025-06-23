@@ -1,12 +1,12 @@
-import { Position } from '@xyflow/react';
+import { Position } from "@xyflow/react";
 
-import CustomHandle from '../../codeComponents/CustomHandle.jsx';
-import { IconXOR } from '../../../../assets/circuits-icons.jsx';
+import CustomHandle from "../../codeComponents/CustomHandle.jsx";
+import { IconXOR } from "../../../../assets/circuits-icons.jsx";
 
 function XorNode({ isConnectable }) {
   return (
-    <div className='circuit-button'>
-      <IconXOR SVGClassName={'circuit-button-icon'}/>
+    <div className="circuit-button">
+      <IconXOR SVGClassName={"circuit-button-icon"} />
 
       {/* Handles */}
       <CustomHandle

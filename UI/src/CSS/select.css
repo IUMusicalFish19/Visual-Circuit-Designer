@@ -1,88 +1,88 @@
 /* reset */
 button {
-    all: unset;
+  all: unset;
 }
 
 .SelectTrigger {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 4px;
-    padding: 0 15px;
-    font-size: 13px;
-    line-height: 1;
-    height: 35px;
-    gap: 5px;
-    background-color: var(--menu-bg-color);
-    color: var(--text-color);
-    border: 0.05rem solid var(--internal-border-color);
-    z-index: 10000;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 13px;
+  line-height: 1;
+  height: 35px;
+  gap: 5px;
+  background-color: var(--menu-bg-color);
+  color: var(--text-color);
+  border: 0.05rem solid var(--internal-border-color);
+  z-index: 10000;
 }
 
 .SelectTrigger:hover {
-    background-color: var(--button-hover-color);
+  background-color: var(--button-hover-color);
 }
 
 .SelectTrigger[data-placeholder] {
-    color: #000000;
+  color: #000000;
 }
 
 .SelectIcon {
-    color: var(--svg-color);
+  color: var(--svg-color);
 }
 
 .SelectContent {
-    overflow: hidden;
-    background-color: var(--menu-bg-color);
-    border: 0.05rem solid var(--internal-border-color);
-    color: var(--text-color);
+  overflow: hidden;
+  background-color: var(--menu-bg-color);
+  border: 0.05rem solid var(--internal-border-color);
+  color: var(--text-color);
 
-    border-radius: 6px;
-    z-index: 10000;
+  border-radius: 6px;
+  z-index: 10000;
 }
 
 .SelectViewport {
-    padding: 5px;
+  padding: 5px;
 }
 
 .SelectItem {
-    color: var(--text-color);
-    font-size: 13px;
-    line-height: 1;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    height: 25px;
-    padding: 0 35px 0 25px;
-    position: relative;
-    user-select: none;
+  color: var(--text-color);
+  font-size: 13px;
+  line-height: 1;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 35px 0 25px;
+  position: relative;
+  user-select: none;
 }
 .SelectItem[data-highlighted] {
-    outline: none;
-    background-color: var(--button-hover-color);
+  outline: none;
+  background-color: var(--button-hover-color);
 }
 
 .SelectLabel {
-    padding: 0 25px;
-    font-size: 12px;
-    line-height: 25px;
-    color: #000000;
+  padding: 0 25px;
+  font-size: 12px;
+  line-height: 25px;
+  color: #000000;
 }
 
 .SelectItemIndicator {
-    position: absolute;
-    left: 0;
-    width: 25px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  left: 0;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .SelectScrollButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 25px;
-    background-color: white;
-    color: yellowgreen;
-    cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  background-color: white;
+  color: yellowgreen;
+  cursor: default;
 }

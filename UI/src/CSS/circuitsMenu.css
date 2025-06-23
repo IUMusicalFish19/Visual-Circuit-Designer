@@ -1,167 +1,170 @@
 /*_______circuits menu_______*/
 .circuitsMenu {
-    /*width: 15.33rem;*/
-    overflow: auto;
-    max-height: 70vh;
-    z-index: 200;
-    position: fixed;
-    top: 2.5rem;
-    left: -15.5rem;
-    margin: 0.5rem 0 0 0.5rem;
-    border-radius: 0.5rem;
-    background-color: var(--menu-bg-color);
-    color: var(--text-color);
-    transition: left 0.2s ease, color 0s, background-color 0s;
-    user-select: none;
-    border: 0.05rem solid var(--external-border-color);
+  /*width: 15.33rem;*/
+  overflow: auto;
+  max-height: 70vh;
+  z-index: 200;
+  position: fixed;
+  top: 2.5rem;
+  left: -15.5rem;
+  margin: 0.5rem 0 0 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--menu-bg-color);
+  color: var(--text-color);
+  transition:
+    left 0.2s ease,
+    color 0s,
+    background-color 0s;
+  user-select: none;
+  border: 0.05rem solid var(--external-border-color);
 }
 
 .circuitsMenu.open {
-    transition: 0.2s ease;
-    position: fixed;
-    left: 0;
+  transition: 0.2s ease;
+  position: fixed;
+  left: 0;
 }
 
 .circuitsMenuInnerButton {
-    background-color: var(--button-color);
-    border: none;
-    transition: 0.15s ease-out;
-    border-radius: 0.5rem;
-    width: 3.33rem;
-    height: 3.33rem;
-    /*margin: 0.05rem;*/
+  background-color: var(--button-color);
+  border: none;
+  transition: 0.15s ease-out;
+  border-radius: 0.5rem;
+  width: 3.33rem;
+  height: 3.33rem;
+  /*margin: 0.05rem;*/
 }
 
 .circuitsMenuInnerButton:hover {
-    transition: 0.15s ease-out;
-    background-color: var(--external-border-color);
+  transition: 0.15s ease-out;
+  background-color: var(--external-border-color);
 }
 
 .circuitsMenuInnerButton:active {
-    transition: 0.05s ease-out;
-    background-color: var(--select-color);
-    box-shadow: none;
+  transition: 0.05s ease-out;
+  background-color: var(--select-color);
+  box-shadow: none;
 }
 
 .circuitsMenuTitle {
-    margin-top: 0.66rem;
-    text-align: center;
-    font-size: 1.32rem;
+  margin-top: 0.66rem;
+  text-align: center;
+  font-size: 1.32rem;
 }
 
 .buttonPicture {
-    width: 2.66rem;
-    align-items: center;
-    vertical-align: middle;
+  width: 2.66rem;
+  align-items: center;
+  vertical-align: middle;
 }
 
 .buttonText {
-    vertical-align: bottom;
-    font-size: 10px;
-    text-align: center;
-    width: 100%;
-    font-family: Montserrat, serif;
-    font-weight: 600;
+  vertical-align: bottom;
+  font-size: 10px;
+  text-align: center;
+  width: 100%;
+  font-family: Montserrat, serif;
+  font-weight: 600;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .circuitsName {
-    text-align: center;
+  text-align: center;
 }
 
 .gates {
-    padding: 0;
-    animation: fadeIn 0.3s ease-in-out;
-    text-align: center;
+  padding: 0;
+  animation: fadeIn 0.3s ease-in-out;
+  text-align: center;
 }
 
 .gates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(3.33rem, 1rem));
-    gap: 0.5rem;
-    padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3.33rem, 1rem));
+  gap: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .menu-item.active .gates-grid {
-    max-height: 500px; /* Enough for content */
+  max-height: 500px; /* Enough for content */
 }
 
 .arrow {
-    height: 0.75rem;
-    color: var(--svg-color);
-    transition: transform 0.15s;
-    cursor: pointer;
-    user-select: none;
-    margin: 0.25rem;
-    transform: rotate(90deg);
+  height: 0.75rem;
+  color: var(--svg-color);
+  transition: transform 0.15s;
+  cursor: pointer;
+  user-select: none;
+  margin: 0.25rem;
+  transform: rotate(90deg);
 }
 
 .menu-item.active .arrow {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
-
 
 /*_______Open Menu_______*/
 .openCircuitsMenuButton {
-    position: fixed;
-    top: 0.5rem;
-    left: 0.5rem;
-    width: 2rem;
-    height: 2rem;
-    z-index: 500;
-    background-color: var(--button-color);
-    border: var(--external-border-color) solid 0.07rem;
-    transition: 0.15s ease-out;
-    border-radius: 0.33rem;
-    user-select: none;
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  z-index: 500;
+  background-color: var(--button-color);
+  border: var(--external-border-color) solid 0.07rem;
+  transition: 0.15s ease-out;
+  border-radius: 0.33rem;
+  user-select: none;
 }
 
 .openCircuitsMenuButtonIcon {
-    color: var(--svg-color);
-    width: 1.4rem;
-    height: 1.4rem;
-    user-select: none;
-    margin: auto;
-    display: block;
-    justify-content: center;
-    align-items: center;
+  color: var(--svg-color);
+  width: 1.4rem;
+  height: 1.4rem;
+  user-select: none;
+  margin: auto;
+  display: block;
+  justify-content: center;
+  align-items: center;
 }
 
 .openCircuitsMenuButton:hover {
-    transition: 0.15s ease-out;
-    background-color: var(--button-hover-color);
+  transition: 0.15s ease-out;
+  background-color: var(--button-hover-color);
 }
 
 .openCircuitsMenuButton:active {
-    transition: 0.05s ease-out;
-    background-color: var(--button-hover-color);
-    box-shadow: none;
+  transition: 0.05s ease-out;
+  background-color: var(--button-hover-color);
+  box-shadow: none;
 }
 
-
 .gates-grid-wrapper {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
 }
 
 .gates-grid-wrapper.open {
-    max-height: 200px;
+  max-height: 200px;
 }
 
 .gates-grid {
-    padding-top: 4px;
-    opacity: 0;
-    transform: translateY(-160px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+  padding-top: 4px;
+  opacity: 0;
+  transform: translateY(-160px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .gates-grid-wrapper.open .gates-grid {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }

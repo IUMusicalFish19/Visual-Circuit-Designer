@@ -1,20 +1,28 @@
 import React, { useState, useCallback } from "react";
 import { IconArrow } from "../../../assets/ui-icons.jsx";
 import {
-  IconAND, IconOR, IconNOT, IconNAND, IconNOR, IconXOR,
-  IconInput, IconOutput
+  IconAND,
+  IconOR,
+  IconNOT,
+  IconNAND,
+  IconNOR,
+  IconXOR,
+  IconInput,
+  IconOutput,
 } from "../../../assets/circuits-icons.jsx";
 
-export default function CircuitsMenu({ circuitsMenuState, onDragStart, spawnCircuit }) {
+export default function CircuitsMenu({
+  circuitsMenuState,
+  onDragStart,
+  spawnCircuit,
+}) {
   const [openIndexes, setOpenIndexes] = useState([]);
-
-
 
   const toggleItem = useCallback((index) => {
     setOpenIndexes((prevIndexes) =>
       prevIndexes.includes(index)
         ? prevIndexes.filter((i) => i !== index)
-        : [...prevIndexes, index]
+        : [...prevIndexes, index],
     );
   }, []);
 
@@ -22,29 +30,29 @@ export default function CircuitsMenu({ circuitsMenuState, onDragStart, spawnCirc
     {
       header: "Basic Logic Elements",
       gates: [
-        { id: 'andNode', label: 'AND', icon: IconAND },
-        { id: 'orNode', label: 'OR', icon: IconOR },
-        { id: 'notNode', label: 'NOT', icon: IconNOT },
-        { id: 'nandNode', label: 'NAND', icon: IconNAND },
-        { id: 'norNode', label: 'NOR', icon: IconNOR },
-        { id: 'xorNode', label: 'XOR', icon: IconXOR }
-      ]
+        { id: "andNode", label: "AND", icon: IconAND },
+        { id: "orNode", label: "OR", icon: IconOR },
+        { id: "notNode", label: "NOT", icon: IconNOT },
+        { id: "nandNode", label: "NAND", icon: IconNAND },
+        { id: "norNode", label: "NOR", icon: IconNOR },
+        { id: "xorNode", label: "XOR", icon: IconXOR },
+      ],
     },
     {
       header: "Advanced Logic Elements",
-      gates: []
+      gates: [],
     },
     {
       header: "Pins",
       gates: [
-        { id: 'inputNode', label: 'input', icon: IconInput },
-        { id: 'outputNode', label: 'output', icon: IconOutput },
-      ]
+        { id: "inputNode", label: "input", icon: IconInput },
+        { id: "outputNode", label: "output", icon: IconOutput },
+      ],
     },
     {
       header: "Custom Logic Elements",
-      gates: []
-    }
+      gates: [],
+    },
   ];
 
   return (
@@ -66,7 +74,9 @@ export default function CircuitsMenu({ circuitsMenuState, onDragStart, spawnCirc
                 <IconArrow SVGClassName="arrow" draggable="false" />
               </div>
 
-              <div className={`gates-grid-wrapper ${openIndexes.includes(index) ? "open" : ""}`}>
+              <div
+                className={`gates-grid-wrapper ${openIndexes.includes(index) ? "open" : ""}`}
+              >
                 <div className="gates-grid">
                   {item.gates.map((node) => (
                     <div
@@ -76,7 +86,10 @@ export default function CircuitsMenu({ circuitsMenuState, onDragStart, spawnCirc
                       onDragStart={(e) => onDragStart(e, node.id)}
                     >
                       <button onClick={() => spawnCircuit(node.id)}>
-                        <node.icon SVGClassName="dndnode-icon" draggable="false" />
+                        <node.icon
+                          SVGClassName="dndnode-icon"
+                          draggable="false"
+                        />
                         <div className="circuitsName">{node.label}</div>
                       </button>
                     </div>

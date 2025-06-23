@@ -1,15 +1,15 @@
-import React, { useCallback } from 'react';
-import { useReactFlow } from '@xyflow/react';
+import React, { useCallback } from "react";
+import { useReactFlow } from "@xyflow/react";
 
 export default function ContextMenu({
-                                      id,
-                                      name,
-                                      top,
-                                      left,
-                                      right,
-                                      bottom,
-                                      ...props
-                                    }) {
+  id,
+  name,
+  top,
+  left,
+  right,
+  bottom,
+  ...props
+}) {
   const { getNode, setNodes, addNodes, setEdges } = useReactFlow();
   const duplicateNode = useCallback(() => {
     const node = getNode(id);
@@ -38,11 +38,25 @@ export default function ContextMenu({
       className="context-menu"
       {...props}
     >
-      <p style={{ margin: '0.5em', textAlign: 'center' }}>
-        <p style={{ fontSize: '0.95rem', margin: '0.7rem 0 0.7rem 0'}}>Node: {name ? name.slice(0, -4) : ''}</p>
+      <p style={{ margin: "0.5em", textAlign: "center" }}>
+        <p style={{ fontSize: "0.95rem", margin: "0.7rem 0 0.7rem 0" }}>
+          Node: {name ? name.slice(0, -4) : ""}
+        </p>
       </p>
-      <button style={{margin: '0.5rem'}} className={'contextMenuButton'} onClick={duplicateNode}>Duplicate</button>
-      <button style={{margin: '0.5rem'}} className={'contextMenuButton'} onClick={deleteNode}>Delete</button>
+      <button
+        style={{ margin: "0.5rem" }}
+        className={"contextMenuButton"}
+        onClick={duplicateNode}
+      >
+        Duplicate
+      </button>
+      <button
+        style={{ margin: "0.5rem" }}
+        className={"contextMenuButton"}
+        onClick={deleteNode}
+      >
+        Delete
+      </button>
     </div>
   );
 }
