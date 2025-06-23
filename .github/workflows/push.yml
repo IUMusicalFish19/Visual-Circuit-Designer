@@ -17,3 +17,14 @@ jobs:
           npx prettier UI --write
           git add UI
           git status
+
+
+      - name: Setup git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push changes
+        run: |
+          git commit -m "Automated formatting"
+          git push
