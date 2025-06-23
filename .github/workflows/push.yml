@@ -11,5 +11,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - run: |
-          npm ci --prefix UI
+      - name: Run formatter for UI
+        run: |
+          npm ci
+          npx prettier UI --write
+          git add UI

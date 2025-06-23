@@ -4,5 +4,8 @@
     "@xyflow/react": "^12.7.0",
     "reactflow": "^11.11.4",
     "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "prettier": "3.6.0"
   }
 }
