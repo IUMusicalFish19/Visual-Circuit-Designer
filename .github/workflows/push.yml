@@ -16,3 +16,4 @@ jobs:
           npm ci
           npx prettier UI --write
           git add UI
+          git status
