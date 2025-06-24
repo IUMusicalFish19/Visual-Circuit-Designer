@@ -1,8 +1,6 @@
 name: Push workflow
 on:
-  push:
-    paths:
-      - 'UI/**'
+  push
 permissions:
   contents: read
 jobs:
@@ -28,5 +26,4 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git commit -m "Automated formatting"
-          git push
+          git diff-index --quiet HEAD || (git commit -m "Automated formatting" && git push)
