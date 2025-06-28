@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useReactFlow } from "@xyflow/react";
-import { SelectWireType } from "../pages/mainPage/select.jsx";
+import { SelectWireType } from "../mainPage/select.jsx";
 
 export default function EdgeContextMenu({
   id,

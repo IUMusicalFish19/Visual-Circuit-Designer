@@ -21,10 +21,15 @@ import {
   useReactFlow,
 } from "@xyflow/react";
 
-import CircuitsMenu from "./mainPage/circuitsMenu.jsx";
-import Toolbar from "./mainPage/toolbar.jsx";
-import NodeContextMenu from "../codeComponents/NodeContextMenu.jsx";
-import EdgeContextMenu from "../codeComponents/EdgeContextMenu.jsx";
+import CircuitsMenu from "../components/mainPage/circuitsMenu.jsx";
+import Toolbar from "../components/mainPage/toolbar.jsx";
+import NodeContextMenu from "../components/codeComponents/NodeContextMenu.jsx";
+import EdgeContextMenu from "../components/codeComponents/EdgeContextMenu.jsx";
+
+import { initialNodes, nodeTypes } from "../components/codeComponents/nodes";
+import { initialEdges } from "../components/codeComponents/edges";
+import { MinimapSwitch } from "../components/mainPage/switch.jsx";
+import { SelectCanvasBG, SelectTheme } from "../components/mainPage/select.jsx";
 
 import { initialNodes, nodeTypes } from "../codeComponents/nodes.js";
 import { initialEdges } from "../codeComponents/edges.js";
@@ -45,9 +50,11 @@ import { handleSimulateClick } from "./mainPage/runnerHandler.jsx";
 import { updateInputState } from "./mainPage/runnerHandler.jsx";
 import { Toaster } from "react-hot-toast";
 import {
+  showToast,
   setCurrentLogLevel,
   getCurrentLogLevel,
 } from "../codeComponents/logger.jsx";
+import { updateInputState } from "../components/mainPage/runnerHandler.jsx";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const SimulateStateContext = createContext({
@@ -696,7 +703,10 @@ export default function Main() {
           setActiveAction={setActiveAction}
           activeWire={activeWire}
           setActiveWire={setActiveWire}
+          // activeButton={activeButton}
+          // setActiveButton={setActiveButton}
           setPanOnDrag={setPanOnDrag}
+          setWireType={setWireType}
           saveCircuit={saveCircuit}
           loadCircuit={loadCircuit}
           fileInputRef={fileInputRef}
