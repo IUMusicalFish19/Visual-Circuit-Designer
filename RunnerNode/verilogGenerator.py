@@ -98,7 +98,7 @@ def generate_verilog_from_json(circuit_json_data: dict) -> str:
     verilog_code += "\n    // Output connections\n"
     for output_id, output_info in outputs.items():
         source = output_info["source"] or "1'b0"
-        verilog_code += f"    assign {output_info["verilog_name"]} = {source};\n"
+        verilog_code += f"    assign {output_info['verilog_name']} = {source};\n"
 
     verilog_code += "\nendmodule\n"
     return verilog_code

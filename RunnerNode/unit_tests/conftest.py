@@ -11,7 +11,7 @@ def start_test_server():
         "uvicorn",
         "connect:socket_app",
         "--host", "127.0.0.1",
-        "--port", "8000"
+        "--port", "80"
     ])
     time.sleep(1.5)
     yield
@@ -22,6 +22,6 @@ def start_test_server():
 @pytest_asyncio.fixture
 async def socketio_client(start_test_server):
     client = socketio.AsyncClient()
-    await client.connect("http://127.0.0.1:8000")
+    await client.connect("http://127.0.0.1:80")
     yield client
     await client.disconnect()

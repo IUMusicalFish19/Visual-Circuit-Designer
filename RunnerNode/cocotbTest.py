@@ -40,7 +40,7 @@ async def interactive_test(dut):
 
     def socket_thread():
         try:
-            sio.connect("http://localhost:8000", wait=True)
+            sio.connect("http://localhost:80", wait=True)
             sio.wait()
         except Exception as e:
             dut._log.error(f"Socket.IO failed: {e}")
@@ -105,7 +105,7 @@ def handle_simulation_error(user_sid, error_msg):
     try:
         print(f"[ERROR] {error_msg}")
         error_sio = socketio.Client()
-        error_sio.connect("http://localhost:8000")
+        error_sio.connect("http://localhost:80")
         error_sio.emit("internal_simulation_error", {
             "user_sid": user_sid,
             "msg": error_msg

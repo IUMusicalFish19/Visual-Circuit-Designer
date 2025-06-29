@@ -6,7 +6,7 @@ from socketio.exceptions import ConnectionError
 
 
 sio = socketio.Client()
-ADDRESS = 'http://127.0.0.1:8000'
+ADDRESS = 'http://127.0.0.1:80'
 
 try:
     sio.connect(ADDRESS)
