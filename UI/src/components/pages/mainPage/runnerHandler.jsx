@@ -62,7 +62,7 @@ export const handleSimulateClick = ({
 
     // Initialize socket connection
     if (!socketRef.current) {
-      socketRef.current = io("/", {
+      socketRef.current = io("http://localhost:80", {
         transports: ["websocket"],
         path: "/socket.io",
       });

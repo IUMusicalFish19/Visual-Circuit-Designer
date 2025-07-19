@@ -1,6 +1,8 @@
 services:
   postgres:
     image: postgres:17-alpine
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_DB: "vcd"
       POSTGRES_USER: "vcd"
@@ -11,6 +13,8 @@ services:
     build: ./RunnerNode
   auth:
     build: ./auth
+    ports:
+      - "8080:8080"
     environment:
       POSTGRES_DB: "vcd"
       POSTGRES_USER: "vcd"

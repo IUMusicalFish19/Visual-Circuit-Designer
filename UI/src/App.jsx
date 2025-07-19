@@ -1,6 +1,8 @@
+import Auth from "./components/pages/auth.jsx";
 import Main from "./components/pages/mainPage.jsx";
 import Profile from "./components/pages/profile.jsx";
 import HelloPage from "./components/pages/hello-page.jsx";
+import Registration from "./components/pages/register.jsx";
 
 import "@xyflow/react/dist/style.css";
 
@@ -12,6 +14,7 @@ import "./CSS/dnd.css";
 import "./CSS/backdrop.css";
 import "./CSS/circuitsMenu.css";
 import "./CSS/contextMenu.css";
+import "./CSS/auth.css";
 import "./CSS/button.css";
 import "./CSS/tabs.css";
 
@@ -38,7 +41,9 @@ function App() {
         <Routes>
           <Route path="/profile" element={<Profile />} />
           <Route path="/" element={<Main />} />
+          <Route path="/auth" element={<Auth />} />
           <Route path="/main" element={<HelloPage />} />
+          <Route path="/reg" element={<Registration />} />
         </Routes>
       </div>
     </Router>
