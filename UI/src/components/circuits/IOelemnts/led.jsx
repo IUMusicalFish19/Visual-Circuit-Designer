@@ -49,7 +49,7 @@ function OutputNodeLed({ id, data, isConnectable }) {
   }, [id]);
 
   return (
-    <div className="circuit-button" style={{ width: "60px", height: "80px" }}>
+    <div className="logic-gate" style={{ width: "60px", height: "80px" }}>
       <p className={"input-text"}>LED</p>
       <div className={`led-wrapper`}>
         <Led
@@ -64,6 +64,7 @@ function OutputNodeLed({ id, data, isConnectable }) {
         id="input-1"
         style={getHandleStyle()}
         isConnectable={isConnectable}
+        connections={1}
       />
     </div>
   );

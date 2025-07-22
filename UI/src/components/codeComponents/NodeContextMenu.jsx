@@ -67,7 +67,7 @@ export default function NodeContextMenu({
       </div>
       <button
         style={{ margin: "0.5rem" }}
-        className={"contextMenuButton"}
+        className={"context-menu-button"}
         onClick={duplicateNode}
       >
         Duplicate
@@ -75,14 +75,14 @@ export default function NodeContextMenu({
       <div style={{ display: "flex" }}>
         <button
           style={{ width: "24%" }}
-          className={"contextMenuButton"}
+          className={"context-menu-button"}
           onClick={() => rotateNode(-90)}
         >
           -90
         </button>
         <button
           style={{ width: "24%" }}
-          className={"contextMenuButton"}
+          className={"context-menu-button"}
           onClick={() => rotateNode(90)}
         >
           +90
@@ -90,7 +90,7 @@ export default function NodeContextMenu({
       </div>
       <button
         style={{ margin: "0.5rem" }}
-        className={"contextMenuButton"}
+        className={"context-menu-button"}
         onClick={deleteNode}
       >
         Delete

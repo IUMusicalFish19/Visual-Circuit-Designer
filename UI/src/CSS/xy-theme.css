@@ -11,22 +11,6 @@
   z-index: 5;
 }
 
-/*.react-flow__edge-path {*/
-/*  stroke-width: 2;*/
-/*  stroke: var(--main-0);*/
-/*}*/
-
-/* Hovered edge */
-/*.react-flow__edge.selectable:hover .react-flow__edge-path {*/
-/*  stroke: var(--main-4);*/
-/*}*/
-
-/*!* Selected edge *!*/
-/*.react-flow__edge.selectable.selected .react-flow__edge-path {*/
-/*  !*stroke-width: 3;*!*/
-/*  stroke: var(--main-4);*/
-/*}*/
-
 .react-flow__edge.selected .react-flow__edge-path {
   stroke: var(--main-4) !important;
   stroke-width: 2;
@@ -52,12 +36,35 @@
   background: var(--main-0);
   border: 0.05rem solid var(--main-5);
   object-fit: cover;
-  transition: filter 0.2s;
   z-index: 15;
+
+  transform-origin: center center;
+  transition:
+    transform 0.2s ease-in-out,
+    background 0.2s ease-in-out;
 }
 
 .react-flow__handle:hover {
-  background: var(--main-4);
+  transform: scale(1.5);
+  background: var(--main-0);
+}
+
+.react-flow__handle[data-handlepos="top"] {
+  transform-origin: 150% 150%;
+}
+.react-flow__handle[data-handlepos="bottom"] {
+  transform-origin: 150% -50%;
+}
+.react-flow__handle[data-handlepos="left"] {
+  transform-origin: 150% 150%;
+}
+.react-flow__handle[data-handlepos="right"] {
+  transform-origin: -50% 150%;
+}
+
+.react-flow {
+  --xy-connectionline-stroke-default: var(--main-0);
+  --xy-connectionline-stroke-width-default: 2;
 }
 
 .react-flow__node {

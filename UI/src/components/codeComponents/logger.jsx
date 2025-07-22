@@ -10,14 +10,6 @@ export const LOG_LEVELS = {
 // Уровень логирования по умолчанию
 let currentLogLevel = LOG_LEVELS.ERROR;
 
-export function setCurrentLogLevel(logLevel) {
-  currentLogLevel = logLevel;
-}
-
-export function getCurrentLogLevel() {
-  return currentLogLevel;
-}
-
 export const logMessage = (msg, level = LOG_LEVELS.IMPORTANT) => {
   if (level <= currentLogLevel) {
     const levelLabel = Object.keys(LOG_LEVELS).find(
@@ -49,10 +41,10 @@ export const showToastError = (msg) => {
       <div className={"toast-notification"}>
         <div style={{ flex: 1, wordBreak: "break-word" }}>{msg}</div>
         <button className={"close-cross"} onClick={() => toast.dismiss(t.id)}>
-          <IconCloseCross />
+          <IconCloseCross SVGClassName={"close-cross-icon-toast"} />
         </button>
       </div>
     ),
-    { duration: "1000" },
+    { duration: "500" },
   );
 };

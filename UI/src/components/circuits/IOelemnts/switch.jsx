@@ -55,7 +55,7 @@ function InputNodeSwitch({ id, data, isConnectable }) {
   };
 
   return (
-    <div className="circuit-button" style={{ width: "60px", height: "80px" }}>
+    <div className="logic-gate" style={{ width: "60px", height: "80px" }}>
       <p className={"input-text"}>Switch</p>
 
       <div

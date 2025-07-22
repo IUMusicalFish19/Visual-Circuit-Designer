@@ -1,4 +1,14 @@
 export function hotkeyHandler(e, context) {
+  if (
+    document.activeElement.tagName === "INPUT" ||
+    document.activeElement.tagName === "TEXTAREA" ||
+    document.activeElement.isContentEditable
+  ) {
+    return;
+  }
+
+  if (!context) return;
+
   const {
     openSettings,
     setOpenSettings,
@@ -14,7 +24,8 @@ export function hotkeyHandler(e, context) {
     socketRef,
     nodes,
     edges,
-    handleOpenClick,
+    handleUploadClick,
+    handleExtractClick,
     setActiveAction,
     setPanOnDrag,
     setActiveWire,
@@ -23,124 +34,110 @@ export function hotkeyHandler(e, context) {
   } = context;
 
   const isCtrlOrCmd = e.ctrlKey || e.metaKey;
+  const key = e.key.toLowerCase();
 
+  // Ctrl/Cmd + Key combinations
   if (isCtrlOrCmd) {
-    switch (e.key.toLowerCase()) {
+    switch (key) {
       case "c":
       case "с":
         e.preventDefault();
-        copyElements();
+        copyElements?.();
         return;
       case "x":
       case "ч":
         e.preventDefault();
-        cutElements();
+        cutElements?.();
         return;
       case "v":
       case "м":
         e.preventDefault();
-        pasteElements();
+        pasteElements?.();
         return;
       case "a":
       case "ф":
         e.preventDefault();
-        selectAll();
+        selectAll?.();
         return;
       case "d":
       case "в":
         e.preventDefault();
-        deselectAll();
+        deselectAll?.();
         return;
       case "z":
       case "я":
-        e.preventDefault();
-        undo();
+        if (e.shiftKey) {
+          e.preventDefault();
+          redo?.();
+        } else {
+          e.preventDefault();
+          undo?.();
+        }
         return;
       case "y":
       case "н":
         e.preventDefault();
-        redo();
+        redo?.();
+        return;
+      case "s":
+      case "ы":
+        e.preventDefault();
+        if (e.shiftKey) {
+          setOpenSettings?.((prev) => !prev);
+        } else {
+          saveCircuit?.();
+        }
+        return;
+      case "r":
+      case "к":
+        if (e.shiftKey) {
+          e.preventDefault();
+          handleSimulateClick?.({
+            simulateState,
+            setSimulateState,
+            socketRef,
+            nodes,
+            edges,
+          });
+        }
+        return;
+      case "o":
+      case "щ":
+        e.preventDefault();
+        handleUploadClick?.();
+        return;
+      case "b":
+      case "и":
+        e.preventDefault();
+        handleExtractClick?.();
         return;
     }
   }
 
-  if (
-    isCtrlOrCmd &&
-    e.shiftKey &&
-    (e.key.toLowerCase() === "s" || e.key.toLowerCase() === "ы")
-  ) {
-    e.preventDefault();
-    setOpenSettings((prev) => !prev);
-    return;
-  }
-
-  if (
-    isCtrlOrCmd &&
-    (e.key.toLowerCase() === "s" || e.key.toLowerCase() === "ы")
-  ) {
-    e.preventDefault();
-    saveCircuit();
-    return;
-  }
-
-  if (
-    isCtrlOrCmd &&
-    e.shiftKey &&
-    (e.key.toLowerCase() === "r" || e.key.toLowerCase() === "к")
-  ) {
-    e.preventDefault();
-    handleSimulateClick({
-      simulateState,
-      setSimulateState,
-      socketRef,
-      nodes,
-      edges,
-    });
-    return;
-  }
-
-  if (
-    isCtrlOrCmd &&
-    (e.key.toLowerCase() === "o" || e.key.toLowerCase() === "щ")
-  ) {
-    e.preventDefault();
-    handleOpenClick();
-    return;
-  }
-
-  if (
-    isCtrlOrCmd &&
-    e.shiftKey &&
-    (e.key.toLowerCase() === "z" || e.key.toLowerCase() === "я")
-  ) {
-    e.preventDefault();
-    setOpenSettings((prev) => !prev);
-    return;
-  }
-
+  // Single-key hotkeys (not combined with Ctrl/Cmd)
   const hotkeys = {
     1: () => {
-      setActiveAction("cursor");
-      setPanOnDrag([2]);
+      setActiveAction?.("cursor");
+      setPanOnDrag?.([2]);
     },
     2: () => {
-      setActiveAction("hand");
-      setPanOnDrag(true);
+      setActiveAction?.("hand");
+      setPanOnDrag?.(true);
     },
-    3: () => setActiveAction("eraser"),
-    4: () => setActiveAction("text"),
-    5: () => setActiveWire("default"),
-    6: () => setActiveWire("step"),
-    7: () => setActiveWire("straight"),
+    3: () => setActiveAction?.("eraser"),
+    4: () => setActiveAction?.("text"),
+    5: () => setActiveWire?.("default"),
+    6: () => setActiveWire?.("step"),
+    7: () => setActiveWire?.("straight"),
   };
 
-  if (hotkeys[e.key]) {
+  if (hotkeys[key]) {
     e.preventDefault();
-    hotkeys[e.key]();
+    hotkeys[key]();
     return;
   }
 
-  if (e.key === "Escape" && openSettings) {
-    setOpenSettings(false);
+  if (key === "escape" && openSettings) {
+    setOpenSettings?.(false);
   }
 }

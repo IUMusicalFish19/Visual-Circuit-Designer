@@ -1,67 +1,29 @@
-import { calculateContextMenuPosition } from "../../calculateContextMenuPosition.js";
+import { calculatePosition } from "../../calculatePosition.js";
 
-describe("calculateContextMenuPosition", () => {
-  const node = { id: "node-1", type: "AND" };
+jest.mock("../../../constants/nodeSizes", () => ({
+  NODE_SIZES: {
+    AND: { width: 80, height: 60 },
+    OR: { width: 100, height: 70 },
+    default: { width: 50, height: 50 },
+  },
+}));
 
-  const eventFactory = (x, y) => ({
-    clientX: x,
-    clientY: y,
+describe("calculatePosition", () => {
+  test("calculates position for AND node", () => {
+    const rawPos = { x: 200, y: 150 };
+    const result = calculatePosition(rawPos, "AND");
+    expect(result).toEqual({ x: 160, y: 120 });
   });
 
-  const container = {
-    width: 800,
-    height: 600,
-  };
-
-  test("positions context menu top-left", () => {
-    const event = eventFactory(100, 100);
-    const result = calculateContextMenuPosition(event, node, container);
-    expect(result).toEqual(
-      expect.objectContaining({
-        top: 100,
-        left: 100,
-        right: false,
-        bottom: false,
-      }),
-    );
+  test("calculates position for OR node", () => {
+    const rawPos = { x: 300, y: 250 };
+    const result = calculatePosition(rawPos, "OR");
+    expect(result).toEqual({ x: 250, y: 215 });
   });
 
-  test("positions context menu top-right", () => {
-    const event = eventFactory(750, 100);
-    const result = calculateContextMenuPosition(event, node, container);
-    expect(result).toEqual(
-      expect.objectContaining({
-        top: 100,
-        left: false,
-        right: 50,
-        bottom: false,
-      }),
-    );
-  });
-
-  test("positions context menu bottom-left", () => {
-    const event = eventFactory(100, 580);
-    const result = calculateContextMenuPosition(event, node, container);
-    expect(result).toEqual(
-      expect.objectContaining({
-        top: false,
-        left: 100,
-        right: false,
-        bottom: 20,
-      }),
-    );
-  });
-
-  test("positions context menu bottom-right", () => {
-    const event = eventFactory(780, 580);
-    const result = calculateContextMenuPosition(event, node, container);
-    expect(result).toEqual(
-      expect.objectContaining({
-        top: false,
-        left: false,
-        right: 20,
-        bottom: 20,
-      }),
-    );
+  test("calculates position for unknown node type using default size", () => {
+    const rawPos = { x: 100, y: 100 };
+    const result = calculatePosition(rawPos, "UNKNOWN");
+    expect(result).toEqual({ x: 75, y: 75 });
   });
 });

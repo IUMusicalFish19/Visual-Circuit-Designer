@@ -3,7 +3,7 @@ button {
   all: unset;
 }
 
-.SwitchRoot {
+.switch-root {
   font-size: 3rem;
   width: 42px;
   height: 25px;
@@ -17,7 +17,7 @@ button {
   }
 }
 
-.SwitchThumb {
+.switch-thumb {
   display: block;
   width: 21px;
   height: 21px;
@@ -31,7 +31,7 @@ button {
   }
 }
 
-.Label {
+.label {
   color: white;
   font-size: 3rem;
   line-height: 1;

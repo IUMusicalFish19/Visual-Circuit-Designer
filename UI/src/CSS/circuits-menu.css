@@ -1,12 +1,12 @@
 /*_______circuits menu_______*/
-.circuitsMenu {
-  /*width: 15.33rem;*/
+.circuits-menu {
+  width: 15.33rem;
   overflow: auto;
   max-height: 70vh;
   z-index: 200;
   position: fixed;
   top: calc(2.5rem + 5vh);
-  left: -15.5rem;
+  left: -16rem;
   margin: 0.5rem 0 0 0.5rem;
   border-radius: 0.5rem;
   background-color: var(--menu-lighter);
@@ -21,29 +21,29 @@
 }
 
 /* Global scrollbar styles */
-.circuitsMenu::-webkit-scrollbar {
+.circuits-menu::-webkit-scrollbar {
   width: 8px; /* width of the vertical scrollbar */
 }
 
-.circuitsMenu::-webkit-scrollbar-track {
+.circuits-menu::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.circuitsMenu::-webkit-scrollbar-thumb {
+.circuits-menu::-webkit-scrollbar-thumb {
   background-color: transparent; /* Invisible by default */
   border-radius: 4px;
   transition: background-color 0.2s ease;
 }
 
-.circuitsMenu:hover::-webkit-scrollbar-thumb {
+.circuits-menu:hover::-webkit-scrollbar-thumb {
   background: var(--main-4); /* hover effect */
 }
 
-.circuitsMenu:hover::-webkit-scrollbar-thumb:hover {
+.circuits-menu:hover::-webkit-scrollbar-thumb:hover {
   background: var(--main-5); /* hover effect */
 }
 
-.circuitsMenu.open {
+.circuits-menu.open {
   transition:
     0.2s ease,
     background-color var(--ttime),
@@ -52,19 +52,19 @@
   left: 0;
 }
 
-.circuitsMenuTitle {
+.circuits-menu-title {
   margin-top: 0.66rem;
   text-align: center;
   font-size: 1.32rem;
 }
 
-.buttonPicture {
+.button-picture {
   width: 2.66rem;
   align-items: center;
   vertical-align: middle;
 }
 
-.buttonText {
+.button-text {
   vertical-align: bottom;
   font-size: 10px;
   text-align: center;
@@ -79,7 +79,7 @@
   align-items: center;
 }
 
-.circuitsName {
+.circuits-name {
   text-align: center;
 }
 
@@ -118,7 +118,7 @@
 }
 
 /*_______Open Menu_______*/
-.openCircuitsMenuButton {
+.open-circuits-menu-button {
   position: fixed;
   top: calc(0.5rem + 5vh);
   left: 0.5rem;
@@ -134,7 +134,7 @@
     border var(--ttime);
 }
 
-.openCircuitsMenuButtonIcon {
+.open-circuits-menu-button-icon {
   color: var(--main-0);
   width: 1.4rem;
   height: 1.4rem;
@@ -145,12 +145,12 @@
   align-items: center;
 }
 
-.openCircuitsMenuButton:hover {
+.open-circuits-menu-button:hover {
   transition: 0.15s ease-out;
   background-color: var(--main-3);
 }
 
-.openCircuitsMenuButton:active {
+.open-circuits-menu-button:active {
   transition: 0.05s ease-out;
   background-color: var(--main-3);
   box-shadow: none;
@@ -163,7 +163,7 @@
 }
 
 .gates-grid-wrapper.open {
-  max-height: 200px;
+  max-height: 1000rem;
 }
 
 .gates-grid {

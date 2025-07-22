@@ -3,7 +3,7 @@ button {
   all: unset;
 }
 
-.SelectTrigger {
+.select-trigger {
   display: inline-flex;
   align-items: center;
   border-radius: 4px;
@@ -22,22 +22,22 @@ button {
     border var(--ttime);
 }
 
-.SelectTrigger:hover {
+.select-trigger:hover {
   background-color: var(--main-4);
   transition: 0.08s ease;
 }
 
-.SelectTrigger[data-placeholder] {
+.select-trigger[data-placeholder] {
   color: #000000;
   transition: 0.08s ease;
 }
 
-.SelectIcon {
+.select-icon {
   color: var(--main-0);
   transition: 0.08s ease;
 }
 
-.SelectContent {
+.select-content {
   overflow: hidden;
   background-color: var(--menu-lighter);
   border: 0.05rem solid var(--main-4);
@@ -48,12 +48,12 @@ button {
   z-index: 10000;
 }
 
-.SelectViewport {
+.select-viewport {
   padding: 5px;
   transition: 0.08s ease;
 }
 
-.SelectItem {
+.select-item {
   color: var(--main-0);
   font-size: 13px;
   line-height: 1;
@@ -66,13 +66,13 @@ button {
   user-select: none;
   transition: 0.08s ease;
 }
-.SelectItem[data-highlighted] {
+.select-item[data-highlighted] {
   outline: none;
   background-color: var(--main-4);
   transition: 0.08s ease;
 }
 
-.SelectLabel {
+.select-label {
   padding: 0 25px;
   font-size: 12px;
   line-height: 25px;
@@ -80,7 +80,7 @@ button {
   transition: 0.08s ease;
 }
 
-.SelectItemIndicator {
+.select-item-indicator {
   position: absolute;
   left: 0;
   width: 25px;
@@ -90,7 +90,7 @@ button {
   transition: 0.08s ease;
 }
 
-.SelectScrollButton {
+.select-scroll-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,29 +101,29 @@ button {
   transition: 0.8s ease;
 }
 
-.SelectTriggerWire {
+.select-trigger-wire {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
   margin: 0.5rem;
   border-radius: 0.35rem;
-  background: var(--main-2);
+  background: var(--menu-lighter);
   border: 1px solid var(--main-4);
   color: var(--main-0);
   width: 75%;
   text-align: left;
 }
 
-.SelectTriggerWire:hover {
-  background-color: var(--select-1);
+.select-trigger-wire:hover {
+  background-color: var(--main-4);
 }
 
-.SelectTriggerWire[data-placeholder] {
+.select-trigger-wire[data-placeholder] {
   color: #000000;
 }
 
-.SelectValueWrapper {
+.select-value-wrapper {
   flex-grow: 1;
   overflow: hidden;
   text-overflow: ellipsis;

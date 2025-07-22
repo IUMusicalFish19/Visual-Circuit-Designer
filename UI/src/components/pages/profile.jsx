@@ -7,23 +7,23 @@ const Profile = () => {
     <div className="profile-container">
       <div className="header2">
         <div className="user-info">
-          <div className="profileUserName">UserName</div>
-          <IconUser SVGClassName={"profileUserIcon"} />
+          <div className="profile-user-name">UserName</div>
+          <IconUser SVGClassName={"profile-user-icon"} />
         </div>
       </div>
       <div className="content-container">
         <div className="profile">
-          <div className="profileToEdit">
-            <IconUser SVGClassName={"userIconToEdit"} />
-            <span className="userNameToEdit">UserName</span>
+          <div className="profile-to-edit">
+            <IconUser SVGClassName={"user-icon-to-edit"} />
+            <span className="user-name-to-edit">UserName</span>
           </div>
-          <button className="editProfileButton">
+          <button className="edit-profile-button">
             <span className="editProfileButtonText">Edit Profile</span>
           </button>
         </div>
         <div className="vertical-separator"></div>
-        <div className="projectsPanel">
-          <span className="projectPanelName">My projects</span>
+        <div className="projects-panel">
+          <span className="project-panel-name">My projects</span>
         </div>
       </div>
     </div>

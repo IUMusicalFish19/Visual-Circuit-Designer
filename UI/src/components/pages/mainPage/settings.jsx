@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import UserIcon from "../../../../assets/userIcon.png";
 
-import { MinimapSwitch, KostyaSwitch } from "./switch.jsx";
+import { MinimapSwitch } from "./switch.jsx";
 import { useNotificationsLevel } from "../mainPage.jsx";
 import {
   SelectCanvasBG,
   SelectLogLevel,
   SelectNotificationsPosition,
   SelectTheme,
+  SelectPastePosition,
 } from "./select.jsx";
 import React, { useState } from "react";
 import {
@@ -23,18 +24,20 @@ export default function Settings({
   setShowMinimap,
   currentBG,
   setCurrentBG,
+  pastePosition,
+  setPastePosition,
   theme,
   setTheme,
   closeSettings,
-  setToastPosition,
   toastPosition,
+  setToastPosition,
   currentLogLevel,
   setLogLevel,
 }) {
   const [currentTab, setCurrentTab] = useState(0);
 
   return (
-    <div className={`settingsMenu ${openSettings ? "showed" : ""}`}>
+    <div className={`settings-menu ${openSettings ? "showed" : ""}`}>
       <div className="tabs-menu">
         <div className={"upper-div"}>
           <button onClick={closeSettings}>
@@ -79,6 +82,8 @@ export default function Settings({
           setShowMinimap={setShowMinimap}
           currentBG={currentBG}
           setCurrentBG={setCurrentBG}
+          pastePosition={pastePosition}
+          setPastePosition={setPastePosition}
           theme={theme}
           setTheme={setTheme}
           toastPosition={toastPosition}
@@ -101,6 +106,8 @@ function TabContent({
   setTheme,
   toastPosition,
   setToastPosition,
+  pastePosition,
+  setPastePosition,
 }) {
   const { logLevel, setLogLevel } = useNotificationsLevel();
 
@@ -108,11 +115,11 @@ function TabContent({
     return (
       <Link
         to="/profile"
-        className="openProfileButton"
+        className="open-profile-button"
         style={{ textDecoration: "none" }}
       >
-        <img className="settingUserIcon" src={UserIcon} alt="User" />
-        <span className="settingUserName">UserName</span>
+        <img className="setting-user-icon" src={UserIcon} alt="User" />
+        <span className="setting-user-name">UserName</span>
       </Link>
     );
   }
@@ -120,7 +127,7 @@ function TabContent({
   if (currentTab === 1) {
     return (
       <div>
-        <div className="settingBlock">
+        <div className="setting-block">
           <div className="setting-text">
             <p className="setting-title">Notification details level</p>
             <p className="setting-description">
@@ -137,7 +144,7 @@ function TabContent({
           </div>
         </div>
 
-        <div className="settingBlock">
+        <div className="setting-block">
           <div className="setting-text">
             <p className="setting-title">Notifications position</p>
             <p className="setting-description">
@@ -159,7 +166,7 @@ function TabContent({
   if (currentTab === 2) {
     return (
       <div>
-        <div className="settingBlock">
+        <div className="setting-block">
           <div className="setting-text">
             <p className="setting-title">Show mini-map</p>
             <p className="setting-description">
@@ -177,7 +184,7 @@ function TabContent({
           </div>
         </div>
 
-        <div className="settingBlock">
+        <div className="setting-block">
           <div className="setting-text">
             <p className="setting-title">Canvas background</p>
             <p className="setting-description">
@@ -194,7 +201,7 @@ function TabContent({
           </div>
         </div>
 
-        <div className="settingBlock">
+        <div className="setting-block">
           <div className="setting-text">
             <p className="setting-title">Theme</p>
             <p className="setting-description">
@@ -211,20 +218,20 @@ function TabContent({
           </div>
         </div>
 
-        <div className="settingBlock">
+        <div className="setting-block">
           <div className="setting-text">
-            <p className="setting-title">Kostya switch</p>
+            <p className="setting-title">Paste position</p>
             <p className="setting-description">
-              Если что, switch есть, он просто закомментирован. Надо ему указать
-              boolVar и toggleBoolVar
+              Changes position of the paste.
             </p>
           </div>
 
           <div className={"interactive-wrapper"}>
-            {/*<KostyaSwitch*/}
-            {/*  boolVar={}*/}
-            {/*  toggleBootVar={}*/}
-            {/*/>*/}
+            <SelectPastePosition
+              pastePosition={pastePosition}
+              setPastePosition={setPastePosition}
+              className="selectPastePosition"
+            />
           </div>
         </div>
       </div>

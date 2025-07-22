@@ -7,6 +7,7 @@ export function pasteElements({
   reactFlowInstance,
   setNodes,
   setEdges,
+  pastePosition,
 }) {
   if (!reactFlowInstance) {
     console.error("React Flow instance not available");
@@ -18,10 +19,18 @@ export function pasteElements({
 
   if (clipboard.nodes.length === 0) return;
 
-  const rawPos = reactFlowInstance.screenToFlowPosition({
-    x: mousePosition.x,
-    y: mousePosition.y,
-  });
+  let rawPos;
+  if (pastePosition === "cursor") {
+    rawPos = reactFlowInstance.screenToFlowPosition({
+      x: mousePosition.x,
+      y: mousePosition.y,
+    });
+  } else {
+    rawPos = reactFlowInstance.screenToFlowPosition({
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2,
+    });
+  }
 
   const position = calculatePosition(rawPos, clipboard.nodes[0].type);
 

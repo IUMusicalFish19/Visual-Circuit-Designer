@@ -9,7 +9,27 @@ import {
   IconXOR,
   IconInput,
   IconOutput,
+  IconText,
 } from "../../../../assets/circuits-icons.jsx";
+import { useCustomBlocks } from "./customCircuit.jsx"; // Путь к вашим утилитам
+
+const CustomBlockIcon = ({ inputs, outputs }) => {
+  return (
+    <div className="custom-icon">
+      <div className="inputs">
+        {inputs.map((input, index) => (
+          <div key={index} className="input-dot" title={input.name}></div>
+        ))}
+      </div>
+      <div className="custom-block-body"></div>
+      <div className="outputs">
+        {outputs.map((output, index) => (
+          <div key={index} className="output-dot" title={output.name}></div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default function CircuitsMenu({
   circuitsMenuState,
@@ -17,6 +37,7 @@ export default function CircuitsMenu({
   spawnCircuit,
 }) {
   const [openIndexes, setOpenIndexes] = useState([]);
+  const { customBlocks, isLoading } = useCustomBlocks();
 
   const toggleItem = useCallback((index) => {
     setOpenIndexes((prevIndexes) =>
@@ -25,6 +46,20 @@ export default function CircuitsMenu({
         : [...prevIndexes, index],
     );
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className={`circuits-menu ${circuitsMenuState ? "open" : ""}`}>
+        <div className="menu-container">
+          <div className="menu-header">
+            <p className="circuits-menu-title">Menu</p>
+            <div className="divider"></div>
+          </div>
+          <p>Loading custom blocks...</p>
+        </div>
+      </div>
+    );
+  }
 
   const menuItems = [
     {
@@ -40,7 +75,7 @@ export default function CircuitsMenu({
     },
     {
       header: "Advanced Logic Elements",
-      gates: [],
+      gates: [{ id: "text", label: "Text", icon: IconText }],
     },
     {
       header: "Pins",
@@ -51,16 +86,40 @@ export default function CircuitsMenu({
       ],
     },
     {
-      header: "Custom Logic Elements",
-      gates: [],
+      header: "Custom Circuits",
+      gates: customBlocks.map((block) => ({
+        id: `custom-${block.id}`, // Префикс для идентификации кастомных блоков
+        label: block.name,
+        icon: (props) => (
+          <CustomBlockIcon
+            inputs={block.inputs}
+            outputs={block.outputs}
+            {...props}
+          />
+        ),
+        customData: block, // Сохраняем полные данные блока для spawnCircuit
+      })),
     },
   ];
 
+  // Обработчик для создания кастомного блока
+  const handleSpawnCustomCircuit = useCallback(
+    (nodeId) => {
+      const blockId = nodeId.replace("custom-", "");
+      const block = customBlocks.find((b) => b.id === blockId);
+
+      if (block) {
+        spawnCircuit(`custom-${block.id}`);
+      }
+    },
+    [customBlocks, spawnCircuit],
+  );
+
   return (
-    <div className={`circuitsMenu ${circuitsMenuState ? "open" : ""}`}>
+    <div className={`circuits-menu ${circuitsMenuState ? "open" : ""}`}>
       <div className="menu-container">
         <div className="menu-header">
-          <p className="circuitsMenuTitle">Menu</p>
+          <p className="circuits-menu-title">Menu</p>
           <div className="divider"></div>
         </div>
 
@@ -82,17 +141,23 @@ export default function CircuitsMenu({
                   {item.gates.map((node) => (
                     <div
                       key={node.id}
-                      className="dndnode"
+                      className="menu-element"
                       draggable
                       onDragStart={(e) => onDragStart(e, node.id)}
                       title={node.label}
                     >
-                      <button onClick={() => spawnCircuit(node.id)}>
+                      <button
+                        onClick={() =>
+                          node.id.startsWith("custom-")
+                            ? handleSpawnCustomCircuit(node.id)
+                            : spawnCircuit(node.id)
+                        }
+                      >
                         <node.icon
                           SVGClassName="dndnode-icon"
                           draggable="false"
                         />
-                        <div className="circuitsName">{node.label}</div>
+                        <div className="circuits-name">{node.label}</div>
                       </button>
                     </div>
                   ))}

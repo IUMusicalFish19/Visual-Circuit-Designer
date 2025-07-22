@@ -66,7 +66,7 @@ function InputNodeButton({ id, data, isConnectable }) {
   };
 
   return (
-    <RotatedNodeWrapper className="circuit-button">
+    <RotatedNodeWrapper className="logic-gate">
       <p className="input-text">Button</p>
 
       <SvgButton

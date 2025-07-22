@@ -1,12 +1,14 @@
 import React, { useRef, useEffect, useState } from "react";
 import { IconCloseCross } from "../../../../assets/ui-icons.jsx";
 import { initializeTabHistory } from "../../utils/initializeTabHistory.js";
+import { calculateContextMenuPosition } from "../../utils/calculateContextMenuPosition.js";
 
 export default function TabsContainer({
   tabs,
   activeTabId,
   onTabsChange,
   onActiveTabIdChange,
+  ref,
 }) {
   const scrollRef = useRef(null);
   const textareaRefs = useRef({});
@@ -33,18 +35,6 @@ export default function TabsContainer({
     el.addEventListener("wheel", onWheel, { passive: false });
     return () => el.removeEventListener("wheel", onWheel);
   }, []);
-
-  // Close context menu on click outside
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (contextMenu && !e.target.closest(".context-menu")) {
-        setContextMenu(null);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [contextMenu]);
 
   // Focus textarea when editing starts
   useEffect(() => {
@@ -83,10 +73,16 @@ export default function TabsContainer({
 
   const handleContextMenu = (e, tabId) => {
     e.preventDefault();
+    const menuPosition = calculateContextMenuPosition(
+      e,
+      ref.current.getBoundingClientRect(),
+    );
     setContextMenu({
-      x: e.clientX,
-      y: e.clientY,
       tabId: tabId,
+      top: menuPosition.top,
+      left: menuPosition.left,
+      right: menuPosition.right,
+      bottom: menuPosition.bottom,
     });
   };
 
@@ -100,9 +96,13 @@ export default function TabsContainer({
     setContextMenu(null);
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e, tabId) => {
     if (e.key === "Enter") {
       e.preventDefault();
+      const tab = tabs.find((t) => t.id === tabId);
+      if (tab && tab.title.trim() === "") {
+        updateTabTitle(tabId, "Untitled Tab");
+      }
       setEditingTabId(null);
     }
     if (e.key === "Escape") {
@@ -111,6 +111,12 @@ export default function TabsContainer({
   };
 
   const handleBlur = () => {
+    if (editingTabId !== null) {
+      const tab = tabs.find((t) => t.id === editingTabId);
+      if (tab && tab.title.trim() === "") {
+        updateTabTitle(editingTabId, "Untitled Tab");
+      }
+    }
     setEditingTabId(null);
   };
 
@@ -174,8 +180,10 @@ export default function TabsContainer({
         <div
           className="context-menu"
           style={{
-            left: contextMenu.x,
-            top: contextMenu.y,
+            top: contextMenu.top,
+            left: contextMenu.left,
+            right: contextMenu.right,
+            bottom: contextMenu.bottom,
           }}
         >
           <div
@@ -194,6 +202,13 @@ export default function TabsContainer({
           )}
         </div>
       )}
+
+      <div
+        className={`backdrop ${contextMenu ? "show" : ""}`}
+        onClick={() => {
+          setContextMenu(null);
+        }}
+      />
     </div>
   );
 }

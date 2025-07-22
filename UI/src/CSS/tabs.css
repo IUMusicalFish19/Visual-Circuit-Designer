@@ -94,7 +94,7 @@
 .name-text-area.editing {
   outline: 1px solid var(--main-0);
   border-radius: 2px;
-  background-color: var(--main-2);
+  background-color: var(--menu-lighter);
 }
 
 .tab-title {
@@ -124,18 +124,8 @@
 }
 
 /* Context Menu Styles */
-.context-menu {
-  position: fixed;
-  background: var(--menu-lighter);
-  border: 1px solid var(--main-1);
-  border-radius: 4px;
-  padding: 4px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  min-width: 120px;
-}
-
 .context-menu-item {
+  border-radius: 0.5rem;
   padding: 8px 16px;
   cursor: pointer;
   color: var(--main-0);

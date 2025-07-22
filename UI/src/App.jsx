@@ -1,19 +1,23 @@
 import Main from "./components/pages/mainPage.jsx";
 import Profile from "./components/pages/profile.jsx";
 import HelloPage from "./components/pages/hello-page.jsx";
+import Auth from "./components/pages/auth.jsx";
+import Reg from "./components/pages/register.jsx";
 
 import "@xyflow/react/dist/style.css";
 
 import "./CSS/variables.css";
-import "./CSS/App.css";
+import "./CSS/app.css";
 import "./CSS/settings.css";
 import "./CSS/toolbar.css";
 import "./CSS/dnd.css";
 import "./CSS/backdrop.css";
-import "./CSS/circuitsMenu.css";
-import "./CSS/contextMenu.css";
+import "./CSS/circuits-menu.css";
+import "./CSS/context-menu.css";
 import "./CSS/button.css";
 import "./CSS/tabs.css";
+import "./CSS/name-editor.css";
+import "./CSS/customBlock.css";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -39,6 +43,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/" element={<Main />} />
           <Route path="/main" element={<HelloPage />} />
+          <Route path="/login" element={<Auth />} />
+          <Route path="/register" element={<Reg />} />
         </Routes>
       </div>
     </Router>

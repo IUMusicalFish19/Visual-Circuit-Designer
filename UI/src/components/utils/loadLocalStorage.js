@@ -8,6 +8,7 @@ export function loadLocalStorage({
   setCircuitsMenuState,
   setLogLevel,
   setToastPosition,
+  setPastePosition,
 }) {
   const saved = localStorage.getItem("userSettings");
   if (!saved) return;
@@ -31,4 +32,5 @@ export function loadLocalStorage({
     setCircuitsMenuState(parsed.circuitsMenuState);
   if (parsed.logLevel) setLogLevel(parsed.logLevel);
   if (parsed.toastPosition) setToastPosition(parsed.toastPosition);
+  if (parsed.pastePosition) setPastePosition(parsed.pastePosition);
 }

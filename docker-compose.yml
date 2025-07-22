@@ -1,7 +1,51 @@
 services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: "vcd"
+      POSTGRES_USER: "vcd"
+      POSTGRES_PASSWORD: "pgpwd4vcd"
+    volumes:
+      - ./postgres-init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U vcd -d vcd" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  runner:
+    build: ./RunnerNode
+
+  auth:
+    build: ./auth
+    environment:
+      POSTGRES_DB: "vcd"
+      POSTGRES_USER: "vcd"
+      POSTGRES_PASSWORD: "pgpwd4vcd"
+      POSTGRES_HOST: "postgres"
+      POSTGRES_PORT: 5432
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  profile:
+    build: ./backend
+    environment:
+      AUTH_SERVICE_URL: "http://auth:8080"
+      POSTGRES_DB: "vcd"
+      POSTGRES_USER: "vcd"
+      POSTGRES_PASSWORD: "pgpwd4vcd"
+      POSTGRES_HOST: "postgres"
+      POSTGRES_PORT: 5432
+    depends_on:
+      postgres:
+        condition: service_healthy
+
   webserver:
     build: ./UI
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-  runner:
-    build: ./RunnerNode
+    depends_on:
+      - runner
+      - auth
+      - profile

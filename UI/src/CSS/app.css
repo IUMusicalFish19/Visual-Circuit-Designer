@@ -1,7 +1,7 @@
 .controls {
   border: var(--main-5) solid 0.05rem;
   background-color: var(--menu-lighter);
-  border-radius: 0.5rem;
+  border-radius: 0.33rem;
   overflow: hidden;
   box-shadow: none;
   transition:
@@ -11,7 +11,7 @@
 
 .controls button {
   background-color: var(--menu-lighter);
-  border-top: var(--main-4) solid 0.05rem;
+  /*border-top: var(--main-4) solid 0.05rem;*/
   border-bottom: var(--main-4) solid 0.05rem;
   transition:
     background-color var(--ttime),
@@ -51,27 +51,6 @@
   }
 }
 
-.circuit-button.input {
-  position: relative;
-  width: 100px;
-  height: 50px;
-  transition:
-    background-color var(--ttime),
-    border var(--ttime);
-}
-
-/* SVG‑иконка занимает весь контейнер */
-.input-icon-wrapper {
-  width: 100%;
-  height: 100%;
-  transform: scale(1.5);
-}
-
-.circuit-button.input .circuit-button-icon {
-  width: 100%;
-  height: 100%;
-}
-
 /* Обёртка для переключателя — поверх, но без влияния на размеры */
 .switch-wrapper {
   position: absolute;
@@ -97,6 +76,11 @@
 .close-cross-icon {
   width: 0.6rem;
   height: 0.6rem;
+}
+
+.close-cross-icon-toast {
+  width: 0.8rem;
+  height: 0.8rem;
 }
 
 .toast-notification {

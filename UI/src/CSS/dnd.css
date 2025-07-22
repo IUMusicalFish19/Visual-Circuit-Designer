@@ -1,5 +1,5 @@
 /*______DragAndDrop______*/
-.dndnode {
+.menu-element {
   padding: 8px;
   border: var(--main-4) 0.05rem solid;
   border-radius: 0.5rem;
@@ -11,18 +11,18 @@
   user-select: none;
 }
 
-.dndnode:hover {
+.menu-element:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.dndnode:active {
+.menu-element:active {
   background: var(--main-4);
   transform: translateY(0px);
   box-shadow: none;
 }
 
-.dndnode svg {
+.menu-element svg {
   width: 50px;
   height: auto;
   user-select: none;
@@ -40,18 +40,15 @@
   }
 }
 
-.circuit-button {
+.logic-gate {
   display: flex;
-  box-sizing: border-box;
   align-items: center;
   justify-content: center;
 }
 
-.circuit-button-icon {
-  margin: -2% -14% 0 -14%;
+.logic-gate-icon {
   color: var(--main-0);
-  object-fit: cover;
-  /*scale: 2;*/
+  /*object-fit: cover;*/
 }
 
 .switch-icon-wrapper {
@@ -63,22 +60,9 @@
   justify-content: center;
 }
 
-.switchNodeButton {
+.switch-node-button {
   width: 70%;
   height: 70%;
-}
-
-.circuit-button.input {
-  width: 60px;
-  height: 80px;
-  position: relative;
-  border: 0.05rem solid var(--main-5);
-  border-radius: 4px;
-  background: var(--main-2);
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
 }
 
 .input-text {

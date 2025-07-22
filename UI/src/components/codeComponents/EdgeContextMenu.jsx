@@ -50,11 +50,11 @@ export default function EdgeContextMenu({
       <SelectWireType
         wireType={currentType}
         setWireType={changeEdgeType}
-        className="selectWireType"
+        className="select-wire-type"
       />
       <button
         style={{ margin: "0.5rem" }}
-        className={"contextMenuButton"}
+        className={"context-menu-button"}
         onClick={deleteEdge}
       >
         Delete

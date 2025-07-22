@@ -17,7 +17,10 @@ jobs:
           npx prettier UI --write
           git add UI
           git status
-
+      - name: Run formatter for Auth
+        run: |
+          find auth/src -iname '*.cpp' -or -iname '*.hpp' | xargs clang-format -i
+          git add auth/src
 
       - name: Setup git user
         run: |

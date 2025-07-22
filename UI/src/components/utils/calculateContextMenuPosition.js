@@ -1,13 +1,5 @@
-export function calculateContextMenuPosition(
-  event,
-  object,
-  containerRect,
-  string,
-) {
+export function calculateContextMenuPosition(event, containerRect) {
   return {
-    id: object.id,
-    name: object.type,
-    type: string,
     top: event.clientY < containerRect.height - 200 && event.clientY,
     left: event.clientX < containerRect.width - 200 && event.clientX,
     right:

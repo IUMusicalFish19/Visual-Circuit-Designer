@@ -1,14 +1,7 @@
 export const IconAND = ({ SVGClassName, style }) => (
-  <svg className={SVGClassName} style={style} viewBox="0 0 800 600">
+  <svg className={SVGClassName} style={style} viewBox="87 65 626 480">
     <g>
-      <title>Layer 1</title>
-      <path
-        id="svg_13"
-        d="m-453.63411,-377.87599l18.0907,8.3969l-18.0907,-8.3969z"
-        opacity="NaN"
-        stroke="currentColor"
-        fill="none"
-      />
+      <title>AND</title>
       <line
         strokeWidth="20"
         stroke="currentColor"
@@ -47,30 +40,14 @@ export const IconAND = ({ SVGClassName, style }) => (
         x1="560.32368"
         fill="none"
       />
-      <path
-        id="svg_33"
-        d="m175.0254,138.81935"
-        opacity="NaN"
-        strokeWidth="10"
-        stroke="currentColor"
-        fill="none"
-      />
-      <path
-        id="svg_34"
-        d="m168.02509,133.81913"
-        opacity="NaN"
-        strokeWidth="10"
-        stroke="currentColor"
-        fill="none"
-      />
     </g>
   </svg>
 );
 
 export const IconOR = ({ SVGClassName, style }) => (
-  <svg style={style} viewBox="0 0 800 600" className={SVGClassName}>
+  <svg className={SVGClassName} style={style} viewBox="87 65 626 480">
     <g>
-      <title>Layer 1</title>
+      <title>OR</title>
       <line
         x1="557"
         y1="304.41326"
@@ -124,16 +101,9 @@ export const IconOR = ({ SVGClassName, style }) => (
 );
 
 export const IconNAND = ({ SVGClassName, style }) => (
-  <svg style={style} viewBox="0 0 800 600" className={SVGClassName}>
+  <svg className={SVGClassName} style={style} viewBox="87 65 626 480">
     <g>
-      <title>Layer 1</title>
-      <path
-        id="svg_13"
-        d="m-453.63411,-377.87599l18.0907,8.3969l-18.0907,-8.3969z"
-        opacity="NaN"
-        stroke="currentColor"
-        fill="none"
-      />
+      <title>NAND</title>
       <line
         strokeWidth="20"
         stroke="currentColor"
@@ -143,14 +113,6 @@ export const IconNAND = ({ SVGClassName, style }) => (
         y1="302"
         x1="610"
         fill="none"
-      />
-      <path
-        id="svg_5"
-        d="m325.84396,285.0036"
-        opacity="NaN"
-        strokeWidth="20"
-        stroke="currentColor"
-        fill="#fff"
       />
       <line
         strokeWidth="20"
@@ -195,9 +157,9 @@ export const IconNAND = ({ SVGClassName, style }) => (
 );
 
 export const IconNOR = ({ SVGClassName, style }) => (
-  <svg style={style} viewBox="0 0 800 600" className={SVGClassName}>
+  <svg className={SVGClassName} style={style} viewBox="87 65 626 480">
     <g>
-      <title>Layer 1</title>
+      <title>NOR</title>
       <line
         stroke="currentColor"
         x1="610"
@@ -260,9 +222,9 @@ export const IconNOR = ({ SVGClassName, style }) => (
 );
 
 export const IconXOR = ({ SVGClassName, style }) => (
-  <svg style={style} viewBox="0 0 800 600" className={SVGClassName}>
+  <svg className={SVGClassName} style={style} viewBox="87 65 626 480">
     <g>
-      <title>Layer 1</title>
+      <title>XOR</title>
       <line
         opacity="0.99"
         x1="570"
@@ -329,9 +291,9 @@ export const IconXOR = ({ SVGClassName, style }) => (
 );
 
 export const IconNOT = ({ SVGClassName, style }) => (
-  <svg style={style} viewBox="0 0 800 600" className={SVGClassName}>
+  <svg className={SVGClassName} style={style} viewBox="87 65 626 480">
     <g>
-      <title>Layer 1</title>
+      <title>NOT</title>
       <line
         strokeWidth="20"
         stroke="currentColor"
@@ -386,9 +348,9 @@ export const IconNOT = ({ SVGClassName, style }) => (
 );
 
 export const IconInput = ({ SVGClassName, style }) => (
-  <svg style={style} viewBox="0 0 800 600" fill="none" className={SVGClassName}>
+  <svg className={SVGClassName} style={style} viewBox="87 65 626 480">
     <g>
-      <title>Layer 1</title>
+      <title>Input</title>
       <line
         strokeWidth="20"
         x1="560"
@@ -443,9 +405,9 @@ export const IconInput = ({ SVGClassName, style }) => (
 );
 
 export const IconOutput = ({ SVGClassName, style }) => (
-  <svg style={style} viewBox="0 0 800 600" fill="none" className={SVGClassName}>
+  <svg className={SVGClassName} style={style} viewBox="87 65 626 480">
     <g>
-      <title>Layer 1</title>
+      <title>Output</title>
       <line
         stroke="currentColor"
         strokeWidth="20"
@@ -498,50 +460,53 @@ export const IconOutput = ({ SVGClassName, style }) => (
   </svg>
 );
 
-export const IconSwitchOn = ({ SVGClassName, style }) => (
-  <svg
-    style={style}
-    className={SVGClassName}
-    fill="currentColor"
-    viewBox="-2 -6 24 24"
-  >
-    <path d="M6 0h8a6 6 0 1 1 0 12H6A6 6 0 1 1 6 0zm1 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
+export const IconText = ({ SVGClassName, style }) => (
+  <svg className={SVGClassName} style={style} viewBox="87 65 626 480">
+    <g>
+      <title>TEXT</title>
+      {/* Горизонтальная перекладина T */}
+      <line
+        stroke="currentColor"
+        strokeWidth="20"
+        x1="150"
+        y1="120"
+        x2="550"
+        y2="120"
+      />
+      {/* Вертикальная ножка T */}
+      <line
+        stroke="currentColor"
+        strokeWidth="20"
+        x1="350"
+        y1="120"
+        x2="350"
+        y2="450"
+      />
+      {/* Дополнительные горизонтальные строки текста */}
+      <line
+        stroke="currentColor"
+        strokeWidth="20"
+        x1="150"
+        y1="220"
+        x2="550"
+        y2="220"
+      />
+      <line
+        stroke="currentColor"
+        strokeWidth="20"
+        x1="150"
+        y1="320"
+        x2="550"
+        y2="320"
+      />
+      <line
+        stroke="currentColor"
+        strokeWidth="20"
+        x1="150"
+        y1="420"
+        x2="550"
+        y2="420"
+      />
+    </g>
   </svg>
 );
-
-export const IconSwitchOff = ({ SVGClassName }) => (
-  <svg
-    fill="currentColor"
-    viewBox="-2 -5 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="xMinYMin"
-    className={SVGClassName}
-  >
-    <path d="M 7 2 C 3.151 2 0.745 6.167 2.67 9.5 C 3.563 11.047 5.214 12 7 12 L 13 12 C 16.849 12 19.255 7.833 17.33 4.5 C 16.437 2.953 14.786 2 13 2 L 7 2 Z M 7 0 L 13 0 C 18.389 0 21.756 5.833 19.062 10.5 C 17.812 12.666 15.501 14 13 14 L 7 14 C 1.611 14 -1.756 8.167 0.938 3.5 C 2.188 1.334 4.499 0 7 0 Z M 7 11 C 3.921 11 1.996 7.667 3.536 5 C 4.25 3.762 5.571 3 7 3 C 10.079 3 12.004 6.333 10.464 9 C 9.75 10.238 8.429 11 7 11 Z M 7 9 C 8.54 9 9.502 7.333 8.732 6 C 8.375 5.381 7.715 5 7 5 C 5.46 5 4.498 6.667 5.268 8 C 5.625 8.619 6.285 9 7 9 Z" />
-  </svg>
-);
-
-// const IconXNOR = ({ SVGClassName }) => (
-//   <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" className={SVGClassName}>
-//     <g>
-//       <title>Layer 1</title>
-//       <path fill="none" stroke="currentColor" opacity="NaN" d="m-453.63411,-377.87599l18.0907,8.3969l-18.0907,-8.3969z" id="svg_13"/>
-//       <line fill="none" x1="620" y1="304.41326" x2="713" y2="304.90239" id="svg_22" stroke="currentColor" strokeWidth="20"/>
-//       <path stroke="currentColor" fill="none" strokeWidth="20" opacity="NaN" d="m232,122.90423c1.9304,-3.08261 239.36945,-12.33043 313.68982,174.16734" id="svg_51"/>
-//       <path stroke="currentColor" fill="none" strokeWidth="20" opacity="NaN" d="m232.96529,472.63318c1.9361,3.0594 240.07629,12.23756 314.6161,-172.85542" id="svg_52"/>
-//       <g stroke="null" id="svg_14">
-//         <path stroke="currentColor" fill="#fff" strokeWidth="20" opacity="NaN" d="m313.66862,283.78358" id="svg_5"/>
-//         <path stroke="currentColor" id="svg_2" d="m220,121.61329c0,0 74.85058,62.76785 88,184.99999" opacity="NaN" strokeWidth="20" fill="none"/>
-//         <path stroke="currentColor" id="svg_4" d="m220.99999,472.61326c0,0 74,-57.67857 87,-170.00001" opacity="NaN" strokeWidth="20" fill="none"/>
-//       </g>
-//       <g id="svg_18">
-//         <path fill="#fff" stroke="currentColor" strokeWidth="20" opacity="NaN" d="m252.66862,284.17029" id="svg_15"/>
-//         <path stroke="currentColor" id="svg_16" d="m159,122c0,0 74.85058,62.76785 88,184.99999" opacity="NaN" strokeWidth="20" fill="none"/>
-//         <path stroke="currentColor" id="svg_17" d="m159.99999,472.99997c0,0 74,-57.67857 87,-170.00001" opacity="NaN" strokeWidth="20" fill="none"/>
-//       </g>
-//       <line fill="none" x1="87" y1="227.23715" x2="221" y2="227.23715" id="svg_1" stroke="currentColor" strokeWidth="20"/>
-//       <line fill="none" opacity="NaN" x1="87" y1="390.23436" x2="221" y2="390.23436" id="svg_3" stroke="currentColor" strokeWidth="20"/>
-//       <ellipse ry="35" rx="35" id="svg_6" cy="304" cx="587" strokeWidth="20" stroke="currentColor" fill="none"/>
-//     </g>
-//   </svg>
-// );
